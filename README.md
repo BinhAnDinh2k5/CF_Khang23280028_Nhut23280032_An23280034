@@ -8,6 +8,7 @@ Description: we design a trading strategy for US market by using SMA indicator w
 ## 2. SETUP:
 
 ## 3. PROJECT STRUCTURE:
+```
 project/
 │── data/
 │   ├── A.csv
@@ -29,12 +30,13 @@ project/
 │   ├── trade_logs/
 │   ├── portfolio.png
 │── README.md
-
+```
 ## 4. RUN:
 4.1. Chuẩn bị dữ liệu:
   - Chạy file yfinance_crawl_data.ipynb lấy các ticker trong khoảng 10 năm từ 1/10/2015 đến 1/10/2025 từ trang yahoo finance
   - Nạp dữ liệu của 10 ticker và thư mục data: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP
-  - Load dữ liệu và chia 2 tập train, validation theo tỉ lệ 8:2. 
+  - Load dữ liệu và chia 2 tập train, validation theo tỉ lệ 8:2.
+
 4.2. Thực hiện tối ưu tham số:
   - Nạp file backtest.py và optimizer.py. Sau đó thực hiện Optimize các tham số SMA(A), SMA(B) cho từng ticker
 Code:
@@ -47,8 +49,18 @@ Code:
   - Nạp file metrics.py và thực hiện tính toán các metrics dùng để đánh giá trading strategy như (winrate, PnL, Sharpe, CAGR)
 4.5. Trực quan hóa các kết quả:
   - Nạp file plotting.py và thực hiện trực quan hóa các bảng đánh giá, hình ảnh các signal và các đường SMA(A) và SMA(B) cho từng ticker.
-4.6. Xuất kết quả và lưu trữ.
-## 5. PARAMETERS:
 
-## 6. 
+4.6. Xuất kết quả và lưu trữ.
+## 5. Ví dụ minh họa:
+5.1. Hình Equity Curve chung của portfolio
+
+5.2. Hình tín hiệu BUY/SELL cho từng stock
+
+5.3. Bảng trades rút gọn
+
+5.4. Performance Metrics
+
+5.5. Tham số tối ưu:
+## 6. PARAMETERS:
+ 
 
