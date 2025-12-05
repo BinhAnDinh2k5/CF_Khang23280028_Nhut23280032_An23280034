@@ -396,6 +396,55 @@ Bảng metrics của Portfolio (min_trade 20):
   </tr>
 </table>
 
+<table>
+  <tr>
+    <td style="vertical-align: top; padding-right: 20px;">
+
+      <b>Bảng 1</b>
+      <table>
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>NTrades</td><td>306</td></tr>
+        <tr><td>WinRate</td><td>0.395424837</td></tr>
+        <tr><td>Realized_pnl</td><td>11577.88058</td></tr>
+        <tr><td>PNL</td><td>19705.96798</td></tr>
+        <tr><td>Avg_realized_pnl</td><td>37.83621105</td></tr>
+        <tr><td>ProfitFactor</td><td>1.191900894</td></tr>
+        <tr><td>Remaining_share_value</td><td>116324.2093</td></tr>
+        <tr><td>FinalCash</td><td>3381.758656</td></tr>
+        <tr><td>FinalEquity</td><td>119705.968</td></tr>
+        <tr><td>CAGR</td><td>0.061659483</td></tr>
+        <tr><td>Sharpe</td><td>0.143332545</td></tr>
+        <tr><td>MaxDrawdown</td><td>-0.169036298</td></tr>
+        <tr><td>Calmar</td><td>0.364770663</td></tr>
+      </table>
+
+    </td>
+
+    <td style="vertical-align: top;">
+
+      <b>Bảng 2</b>
+      <table>
+        <tr><th>Metric</th><th>Value</th></tr>
+        <tr><td>NTrades</td><td>320</td></tr>
+        <tr><td>WinRate</td><td>0.390625</td></tr>
+        <tr><td>Realized_pnl</td><td>7336.0698</td></tr>
+        <tr><td>PNL</td><td>12846.941</td></tr>
+        <tr><td>Avg_realized_pnl</td><td>22.9252</td></tr>
+        <tr><td>ProfitFactor</td><td>1.1178</td></tr>
+        <tr><td>Remaining_share_value</td><td>109240.448</td></tr>
+        <tr><td>FinalCash</td><td>3606.492999</td></tr>
+        <tr><td>FinalEquity</td><td>112846.941</td></tr>
+        <tr><td>CAGR</td><td>0.041</td></tr>
+        <tr><td>Sharpe</td><td>-0.00582</td></tr>
+        <tr><td>MaxDrawdown</td><td>-0.18631</td></tr>
+        <tr><td>Calmar</td><td>0.22019</td></tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+
 5.5. Tham số tối ưu:
 | Ticker | SMA(A)| SMA(B) |
 |--------|---------|---------|
