@@ -10,6 +10,7 @@ Description: Thiết kế trading strategy của thị trường US bằng SMA t
 ```
 project/
 │── data/
+│   ├── tickers.csv
 │   ├── A.csv
 │   ├── AAPL.csv
 │   ├── ABBV.csv
@@ -32,8 +33,8 @@ project/
 │   ├── trading_io.py
 │   ├── main.py
 │── output/
-│   ├── 
-│   │   ├── plotư/
+│   ├── output_atr_min_trade_10/
+│   │   ├── plots/
 │   │   │   ├── A_sma_10_50.png
 │   │   │   ├── AAPL_sma_10_125.png
 │   │   │   ├── ABBV_sma_10_100.png
@@ -46,16 +47,35 @@ project/
 │   │   │   ├── ADP_sma_10_50.png
 │   │   │   ├── equity_curve.png
 │   │   │   ├── ...
-│   ├── per_ticker_params.json
-│   ├── per_trade_summary.csv
-│   ├── performance.csv
-│   ├── portfolio_daily_returns.csv
-│   ├── trade_history.csv
+│   │   ├── per_ticker_params.json
+│   │   ├── per_trade_summary.csv
+│   │   ├── performance.csv
+│   │   ├── portfolio_daily_returns.csv
+│   │   ├── trade_history.csv
+│   ├── output_atr_min_trade_20/
+│   │   ├── plots/
+│   │   │   ├── A_sma_10_50.png
+│   │   │   ├── AAPL_sma_10_125.png
+│   │   │   ├── ABBV_sma_10_100.png
+│   │   │   ├── ABT_sma_10_125.png
+│   │   │   ├── ADSK_sma_10_175.png
+│   │   │   ├── AEE_sma_10_75.png
+│   │   │   ├── AKAM_sma_10_175.png
+│   │   │   ├── ACGL_sma_10_50.png
+│   │   │   ├── AME_sma_10_125.png
+│   │   │   ├── ADP_sma_10_50.png
+│   │   │   ├── equity_curve.png
+│   │   │   ├── ...
+│   │   ├── per_ticker_params.json
+│   │   ├── per_trade_summary.csv
+│   │   ├── performance.csv
+│   │   ├── portfolio_daily_returns.csv
+│   │   ├── trade_history.csv
 │── README.md
 ```
 ## 4. RUN:
 4.1. Chuẩn bị dữ liệu:
-  - Chạy file yfinance_crawl_data.ipynb lấy các ticker trong khoảng 10 năm từ 1/10/2015 đến 1/10/2025 từ trang yahoo finance
+  - Chạy file yfinance_crawl_data.ipynb lấy các ticker trong khoảng 10 năm từ 1/10/2015 đến 1/10/2025 từ trang yahoo finance bằng API
   - Nạp dữ liệu của 50 ticker và thư mục data: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP,....
   - Load dữ liệu và chia 2 tập train, validation theo tỉ lệ 7:3.
 ```
@@ -268,19 +288,33 @@ project/
 ```
 ## 5. Ví dụ minh họa:
 5.1. Hình tín hiệu BUY/SELL cho từng stock
-- Tín hiệu BUY/ SELL của ticker A:
-<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/1f6e4268-12a7-4a44-afb2-e73a3382ed4b" />
-- Tín hiệu BUY/ SELL của ticker AKAM:
-<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/4e5b77fd-b7f0-407c-a10a-2660427e8cb0" />
-- Tín hiệu BUY/ SELL của ticker AME:
-<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/7b16a903-e12e-464d-ba61-cbe1132db68e" />
-- Tín hiệu BUY/ SELL của ticker ABBV:
-<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/314c07cd-661a-4aec-8de9-bad285f776e0" />
-- Tín hiệu BUY/ SELL của ticker ACGL:
-<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/972ccdc8-4da6-438c-af98-c619042c14f7" />
-
-5.2. Hình Equity Curve chung của portfolio
-<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/3b9f2811-15b0-4b03-892b-d02c9c972e95" />
+- Tín hiệu BUY/ SELL của ticker A (với min_trade = 10):
+<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/02617fd2-2351-4e66-8143-523c4e4f2aa9" />
+- Tín hiệu BUY/ SELL của ticker A (với min_trade = 20):
+<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/2be12a0c-07e5-44db-8121-709517802906" />
+- Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 10):
+<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/f807651f-63c3-4640-b76e-743105b1d6f3" />
+- Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 20):
+<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/ce09a744-7f28-4416-b7e1-74ffc1292ead" />
+- Tín hiệu BUY/ SELL của ticker AME (với min_trade = 10):
+<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/f785f437-4824-40e8-99b7-a4ae72756c19" />
+- Tín hiệu BUY/ SELL của ticker AME (với min_trade = 20):
+<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/4a050b15-f7d2-4e45-b01b-e2e042792de1" />
+- Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 10):
+<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/3a9dd6ea-febc-4d4d-89e7-971a1df1f4e2" />
+- Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 20):
+<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/2dd0c08e-5b58-4f37-adf3-eddc28ee9238" />
+- Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 10):
+<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/f25cef2d-b400-4b55-9bde-b458006ec63c" />
+- Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 20):
+<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/405d6c36-3e43-4166-98dc-ca9c10026359" />
+5.2. Hình Equity Curve và DrawDown chung của portfolio:
+- Với min_trade 10:
+<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/072417f9-2bf9-4042-87ff-15320debf677" />
+<img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/9f41bd26-fbaa-47c1-8b48-87eb9d81d63b" />
+- Với min_trade 20:
+<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/2be576bc-c92c-4f55-b841-463167bfff71" />
+<img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/bfa9297b-518d-4b3c-a260-907e99b76c5e" />
 
 5.3. Bảng trades rút gọn
 <img width="692" height="366" alt="Screenshot 2025-12-05 182518" src="https://github.com/user-attachments/assets/5afab768-ed33-42ae-b06c-8684dfac67e6" />
