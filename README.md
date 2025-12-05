@@ -398,10 +398,11 @@ Bảng metrics của Portfolio (min_trade 20):
 
 <table>
   <tr>
+    <!-- BẢNG 1 -->
     <td style="vertical-align: top; padding-right: 20px;">
 
       <b>Bảng 1</b>
-      <table>
+      <table border="1" cellspacing="0" cellpadding="4">
         <tr><th>Metric</th><th>Value</th></tr>
         <tr><td>NTrades</td><td>306</td></tr>
         <tr><td>WinRate</td><td>0.395424837</td></tr>
@@ -420,10 +421,11 @@ Bảng metrics của Portfolio (min_trade 20):
 
     </td>
 
+    <!-- BẢNG 2 -->
     <td style="vertical-align: top;">
 
       <b>Bảng 2</b>
-      <table>
+      <table border="1" cellspacing="0" cellpadding="4">
         <tr><th>Metric</th><th>Value</th></tr>
         <tr><td>NTrades</td><td>320</td></tr>
         <tr><td>WinRate</td><td>0.390625</td></tr>
@@ -443,6 +445,7 @@ Bảng metrics của Portfolio (min_trade 20):
     </td>
   </tr>
 </table>
+
 
 
 5.5. Tham số tối ưu:
