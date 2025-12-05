@@ -1,5 +1,5 @@
 # PROJECT_NAME: DESIGN A TRADING STRATEGY FOR US MARKET
-Description: Thiết kế trading strategy của thị trường US bằng SMA technical indicator có kết hợp tối ưu tham số về timeframe và độ ưu tiên của từng ticker khi giao dịch. Trading strategy được thử với 10 mã cổ phiếu: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP và chỉ áp dụng với phương pháp Long (mua thấp - bán cao).
+Description: Thiết kế trading strategy của thị trường US bằng SMA technical indicator có kết hợp tối ưu tham số về timeframe và độ ưu tiên của từng ticker khi giao dịch. Trading strategy được thử với 50 mã cổ phiếu: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP... và chỉ áp dụng với phương pháp Long (mua thấp - bán cao).
 ## 1. MAIN USAGE:
 - Apply multi-ticker backtesting.
 - Sử dụng đồng thời 2 đường SMA(A) và SMA(B) (với A < B) để tìm kiếm signal, trong đó đường SMA(A) đóng vai trò là đường thể hiện sự biến động còn SMA(B) là đường nền, ổn định hơn. 
@@ -20,6 +20,7 @@ project/
 │   ├── ADI.csv
 │   ├── ADM.csv
 │   ├── ADP.csv
+│   ├── ...
 │── src/
 │   ├── backtest.py
 │   ├── optimizer.py
@@ -32,16 +33,17 @@ project/
 │── outputs/
 │   ├── plot/
 │   │   ├── A_sma_10_50.png
-│   │   ├── AAPL_sma_10_50.png
+│   │   ├── AAPL_sma_10_125.png
 │   │   ├── ABBV_sma_10_100.png
-│   │   ├── ABT_sma_10_50.png
+│   │   ├── ABT_sma_10_125.png
+│   │   ├── ADSK_sma_10_175.png
+│   │   ├── AEE_sma_10_75.png
+│   │   ├── AKAM_sma_10_175.png
 │   │   ├── ACGL_sma_10_50.png
-│   │   ├── ACN_sma_10_50.png
-│   │   ├── ADBE_sma_10_50.png
-│   │   ├── ADI_sma_10_50.png
-│   │   ├── ADM_sma_10_50.png
+│   │   ├── AME_sma_10_125.png
 │   │   ├── ADP_sma_10_50.png
 │   │   ├── equity_curve.png
+│   │   ├── ...
 │   ├── per_ticker_params.json
 │   ├── per_trade_summary.csv
 │   ├── performance.csv
@@ -224,9 +226,9 @@ project/
     plot_equity_curve(equity_curve, out_eq)
 ```
 ## 5. Ví dụ minh họa:
-5.1. Hình Equity Curve chung của portfolio
+5.1. Hình tín hiệu BUY/SELL cho từng stock
 
-5.2. Hình tín hiệu BUY/SELL cho từng stock
+5.2. Hình Equity Curve chung của portfolio
 
 5.3. Bảng trades rút gọn
 
