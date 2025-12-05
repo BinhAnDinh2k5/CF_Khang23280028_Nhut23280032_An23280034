@@ -289,35 +289,22 @@ project/
 ```
 ## 5. Ví dụ minh họa:
 5.1. Hình tín hiệu BUY/SELL cho từng stock
-- Tín hiệu BUY/ SELL của ticker A (với min_trade = 10):
-<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/02617fd2-2351-4e66-8143-523c4e4f2aa9" />
 - Tín hiệu BUY/ SELL của ticker A (với min_trade = 20):
 <img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/2be12a0c-07e5-44db-8121-709517802906" />
-- Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 10):
-<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/f807651f-63c3-4640-b76e-743105b1d6f3" />
 - Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 20):
 <img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/ce09a744-7f28-4416-b7e1-74ffc1292ead" />
-- Tín hiệu BUY/ SELL của ticker AME (với min_trade = 10):
-<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/f785f437-4824-40e8-99b7-a4ae72756c19" />
 - Tín hiệu BUY/ SELL của ticker AME (với min_trade = 20):
 <img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/4a050b15-f7d2-4e45-b01b-e2e042792de1" />
-- Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 10):
-<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/3a9dd6ea-febc-4d4d-89e7-971a1df1f4e2" />
 - Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 20):
 <img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/2dd0c08e-5b58-4f37-adf3-eddc28ee9238" />
-- Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 10):
-<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/f25cef2d-b400-4b55-9bde-b458006ec63c" />
 - Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 20):
 <img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/405d6c36-3e43-4166-98dc-ca9c10026359" />
 5.2. Hình Equity Curve và DrawDown chung của portfolio:
-- Với min_trade 10:
-<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/072417f9-2bf9-4042-87ff-15320debf677" />
-<img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/9f41bd26-fbaa-47c1-8b48-87eb9d81d63b" />
-- Với min_trade 20:
 <img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/2be576bc-c92c-4f55-b841-463167bfff71" />
 <img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/bfa9297b-518d-4b3c-a260-907e99b76c5e" />
 
 5.3. Bảng trades rút gọn
+
 <img width="692" height="366" alt="Screenshot 2025-12-05 182518" src="https://github.com/user-attachments/assets/5afab768-ed33-42ae-b06c-8684dfac67e6" />
 
 5.4. Performance Metrics
