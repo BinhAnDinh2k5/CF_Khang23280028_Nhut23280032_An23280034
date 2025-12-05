@@ -23,6 +23,7 @@ project/
 │   ├── ADP.csv
 │   ├── ...
 │── src/
+│   ├── crawl_tickers.py
 │   ├── yfinance_crawl_data.ipynb
 │   ├── backtest.py
 │   ├── optimizer.py
