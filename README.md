@@ -239,11 +239,24 @@ project/
 <img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/972ccdc8-4da6-438c-af98-c619042c14f7" />
 
 5.2. Hình Equity Curve chung của portfolio
+<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/3b9f2811-15b0-4b03-892b-d02c9c972e95" />
 
 5.3. Bảng trades rút gọn
+<img width="692" height="366" alt="Screenshot 2025-12-05 182518" src="https://github.com/user-attachments/assets/5afab768-ed33-42ae-b06c-8684dfac67e6" />
 
 5.4. Performance Metrics
-
+| Ticker | NTrades | WinRate | Realized PnL | PnL | Avg Realized PnL | ProfitFactor | Remaining Share Value | FinalCash | FinalEquity | CAGR | Sharpe | MaxDrawdown | Calmar |
+|--------|---------|---------|---------------|---------|---------------------|----------------|------------------------|-----------|---------------|----------|---------|---------------|---------|
+| A     | 9  | 0.1111 | -1162.8035 | -1157.4165 | -129.2004 | 0.1392 | 123.4200 |  |  |  |  |  |  |
+| AAPL  | 2  | 0.5    | -378.4736 | 131.1825    | -189.2368 | 0.3375 | 4837.6504 | | | | | | |
+| ABBV  | 7  | 0.1429 | -1991.9110 | 1021.4944 | -284.5587 | 0.0675 | 21481.9548 | | | | | | |
+| ABT   | 4  | 0.5    | 1074.4660 | 1171.2064 | 268.6165 | 9.7998 | 10449.4742 | | | | | | |
+| ADSK  | 3  | 0.3333 | 325.0002 | 325.0002 | 108.3334 | 1.2039 | 0 | | | | | | |
+| AEE   | 5  | 0.6    | 307.2379 | 336.2600 | 61.4476 | 8.8396 | 622.2000 | | | | | | |
+| AKAM  | 2  | 0      | -1156.2805 | -1156.2805 | -578.1402 | 0 | 0 | | | | | | |
+| ACGL  | 10 | 0.4    | 3599.8816 | 3599.8816 | 359.9882 | 3.9170 | 0 | | | | | | |
+| AME   | 1  | 1      | 561.5938 | 1325.9384 | 561.5938 | — | 12701.0399 | | | | | | |
+| ADP   | 8  | 0.375  | 71.1052 | 71.1052 | 8.8882 | 1.2522 | 0 | | | | | | |
 5.5. Tham số tối ưu:
 ## 6. PARAMETERS:
 ```
