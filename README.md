@@ -227,6 +227,16 @@ project/
 ```
 ## 5. Ví dụ minh họa:
 5.1. Hình tín hiệu BUY/SELL cho từng stock
+- Tín hiệu BUY/ SELL của ticker A:
+<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/1f6e4268-12a7-4a44-afb2-e73a3382ed4b" />
+- Tín hiệu BUY/ SELL của ticker AKAM:
+<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/4e5b77fd-b7f0-407c-a10a-2660427e8cb0" />
+- Tín hiệu BUY/ SELL của ticker AME:
+<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/7b16a903-e12e-464d-ba61-cbe1132db68e" />
+- Tín hiệu BUY/ SELL của ticker ABBV:
+<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/314c07cd-661a-4aec-8de9-bad285f776e0" />
+- Tín hiệu BUY/ SELL của ticker ACGL:
+<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/972ccdc8-4da6-438c-af98-c619042c14f7" />
 
 5.2. Hình Equity Curve chung của portfolio
 
