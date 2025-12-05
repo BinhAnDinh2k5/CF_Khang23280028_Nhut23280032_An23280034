@@ -366,24 +366,6 @@ Bảng metrics của Portfolio (min_trade 10 và 20):
 | Calmar                | 0.364770663  | 0.22019
 
 
-
-
-| Metric                | Value        |
-| --------------------- | ------------ |
-| NTrades               | 320          |
-| WinRate               | 0.390625  |
-| Realized_pnl          | 7336.0698  |
-| PNL                   | 12846.941  |
-| Avg_realized_pnl      | 22.9252  |
-| ProfitFactor          | 1.1178 |
-| Remaining_share_value | 109240.448 |
-| FinalCash             | 3606.492999  |
-| FinalEquity           | 112846.941 |
-| CAGR                  | 0.041  |
-| Sharpe                | -0.00582  |
-| MaxDrawdown           | -0.18631 |
-| Calmar                | 0.22019 |
-
 5.5. Tham số tối ưu:
 | Ticker | SMA(A)| SMA(B) |
 |--------|---------|---------|
@@ -400,14 +382,27 @@ Bảng metrics của Portfolio (min_trade 10 và 20):
 
 ## 6. PARAMETERS:
 ```
-     run_kwargs = {
-        "sizing_method": "volatility",
-        "atr_period": 14,
-        "fees_per_order": 0,
-        "stop_loss_pct": 0.08,
-        "take_profit_pct": 0.20,
-        "max_pct_per_ticker": 0.10,
-    }
+    config = BacktestConfig(
+        initial_cash=100_000,               # Vốn ban đầu 
+        sizing_method="volatility",         # Phương pháp tính khối lượng giao dịch
+        fraction=None,                      # Tỷ lệ vốn cho mỗi lệnh 
+        fixed_amount= None,                # Số tiền cố định cho mỗi lệnh 
+        lot_size=1,                         # Kích thước lô cổ phiếu; thị trường Mỹ mua tối thiểu 1 cổ phiếu
+        allow_fractional=False,             # Cho phép mua fractional shares 
+        volatility_risk_pct=0.02,           # Rủi ro tối đa mỗi lệnh 
+        atr_multiplier=1.0,                 # Hệ số nhân ATR 
+        stop_loss_pct=0.08,                 # Mức cắt lỗ cố định 
+        take_profit_pct=0.20,               # Mức chốt lời cố định 
+        sell_fraction_on_signal=1.0,        # Tỷ lệ bán khi có tín hiệu SELL 
+        max_sells_per_day=None,             # Giới hạn số lệnh bán mỗi ngày (None = không giới hạn)
+        max_positions_per_day= math.inf,    # Số lệnh BUY tối đa được mở trong 1 ngày giao dịch
+        max_positions_in_portfolio= None,    # Số lượng vị thế tối đa được giữ trong danh mục
+        max_pct_per_ticker=0.5,            # Tỷ lệ vốn tối đa phân bổ cho một ticker 
+        fees_per_order= 0,                  # Phí giao dịch cho mỗi lệnh (mua/bán)
+        atr_period=14,                      # Chu kỳ tính ATR
+        min_trades= 20,                      # Số lượng giao dịch tối thiểu yêu cầu để mô hình tối ưu được chấp nhận
+        trade_penalty_mode="scale",         # Cách xử lý khi số trade < min_trades: "scale" giảm điểm hoặc "reject" loại bỏ
+    )
 ```
 
 
