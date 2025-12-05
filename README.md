@@ -347,35 +347,26 @@ Bảng metrics của các ticker (Với min_trade 20)
 | ACGL  | 10 | 0.4 | 3599.881588 | 3599.881588 | 359.9881588 | 3.916970496 | 0 |
 | AME   | 1 | 1 | 561.5938107 | 1325.938361 | 561.5938107 |  | 12701.03992 |
 | ADP   | 8 | 0.375 | 71.10521176 | 71.10521176 | 8.88815147 | 1.25218235 | 0 |
-Bảng metrics của Portfolio (min_trade 10):
-Bảng metrics của Portfolio (min_trade 20):
-<table>
-  <tr>
-    <td>
 
-<!-- BẢNG 1 -->
-<b>Bảng 1</b><br>
+Bảng metrics của Portfolio (min_trade 10 và 20):
+| Metric                | Value (min_trade 10)       |  Value (min_trade 20)       |
+| --------------------- | ------------ |------------ |
+| NTrades               | 306          | 320 |
+| WinRate               | 0.395424837  | 0.390625 |
+| Realized_pnl          | 11577.88058  | 7336.0698 |
+| PNL                   | 19705.96798  | 12846.941 |
+| Avg_realized_pnl      | 37.83621105  | 22.9252 |
+| ProfitFactor          | 1.191900894  | 1.1178 |
+| Remaining_share_value | 116324.2093  | 109240.448  |
+| FinalCash             | 3381.758656  | 3606.492999 |
+| FinalEquity           | 119705.968   | 112846.941 |
+| CAGR                  | 0.061659483  | 0.041 |
+| Sharpe                | 0.143332545  | -0.00582 |
+| MaxDrawdown           | -0.169036298 | -0.18631 |
+| Calmar                | 0.364770663  | 0.22019
 
-| Metric                | Value        |
-| --------------------- | ------------ |
-| NTrades               | 306          |
-| WinRate               | 0.395424837  |
-| Realized_pnl          | 11577.88058  |
-| PNL                   | 19705.96798  |
-| Avg_realized_pnl      | 37.83621105  |
-| ProfitFactor          | 1.191900894  |
-| Remaining_share_value | 116324.2093  |
-| FinalCash             | 3381.758656  |
-| FinalEquity           | 119705.968   |
-| CAGR                  | 0.061659483  |
-| Sharpe                | 0.143332545  |
-| MaxDrawdown           | -0.169036298 |
-| Calmar                | 0.364770663  |
-    </td>
-    <td>
 
-<!-- BẢNG 2 -->
-<b>Bảng 2</b><br>
+
 
 | Metric                | Value        |
 | --------------------- | ------------ |
@@ -392,61 +383,6 @@ Bảng metrics của Portfolio (min_trade 20):
 | Sharpe                | -0.00582  |
 | MaxDrawdown           | -0.18631 |
 | Calmar                | 0.22019 |
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <!-- BẢNG 1 -->
-    <td style="vertical-align: top; padding-right: 20px;">
-
-      <b>Bảng 1</b>
-      <table border="1" cellspacing="0" cellpadding="4">
-        <tr><th>Metric</th><th>Value</th></tr>
-        <tr><td>NTrades</td><td>306</td></tr>
-        <tr><td>WinRate</td><td>0.395424837</td></tr>
-        <tr><td>Realized_pnl</td><td>11577.88058</td></tr>
-        <tr><td>PNL</td><td>19705.96798</td></tr>
-        <tr><td>Avg_realized_pnl</td><td>37.83621105</td></tr>
-        <tr><td>ProfitFactor</td><td>1.191900894</td></tr>
-        <tr><td>Remaining_share_value</td><td>116324.2093</td></tr>
-        <tr><td>FinalCash</td><td>3381.758656</td></tr>
-        <tr><td>FinalEquity</td><td>119705.968</td></tr>
-        <tr><td>CAGR</td><td>0.061659483</td></tr>
-        <tr><td>Sharpe</td><td>0.143332545</td></tr>
-        <tr><td>MaxDrawdown</td><td>-0.169036298</td></tr>
-        <tr><td>Calmar</td><td>0.364770663</td></tr>
-      </table>
-
-    </td>
-
-    <!-- BẢNG 2 -->
-    <td style="vertical-align: top;">
-
-      <b>Bảng 2</b>
-      <table border="1" cellspacing="0" cellpadding="4">
-        <tr><th>Metric</th><th>Value</th></tr>
-        <tr><td>NTrades</td><td>320</td></tr>
-        <tr><td>WinRate</td><td>0.390625</td></tr>
-        <tr><td>Realized_pnl</td><td>7336.0698</td></tr>
-        <tr><td>PNL</td><td>12846.941</td></tr>
-        <tr><td>Avg_realized_pnl</td><td>22.9252</td></tr>
-        <tr><td>ProfitFactor</td><td>1.1178</td></tr>
-        <tr><td>Remaining_share_value</td><td>109240.448</td></tr>
-        <tr><td>FinalCash</td><td>3606.492999</td></tr>
-        <tr><td>FinalEquity</td><td>112846.941</td></tr>
-        <tr><td>CAGR</td><td>0.041</td></tr>
-        <tr><td>Sharpe</td><td>-0.00582</td></tr>
-        <tr><td>MaxDrawdown</td><td>-0.18631</td></tr>
-        <tr><td>Calmar</td><td>0.22019</td></tr>
-      </table>
-
-    </td>
-  </tr>
-</table>
-
-
 
 5.5. Tham số tối ưu:
 | Ticker | SMA(A)| SMA(B) |
