@@ -22,6 +22,7 @@ project/
 │   ├── ADP.csv
 │   ├── ...
 │── src/
+│   ├── yfinance_crawl_data.ipynb
 │   ├── backtest.py
 │   ├── optimizer.py
 │   ├── execution.py
@@ -30,20 +31,21 @@ project/
 │   ├── signals.py
 │   ├── trading_io.py
 │   ├── main.py
-│── outputs/
-│   ├── plot/
-│   │   ├── A_sma_10_50.png
-│   │   ├── AAPL_sma_10_125.png
-│   │   ├── ABBV_sma_10_100.png
-│   │   ├── ABT_sma_10_125.png
-│   │   ├── ADSK_sma_10_175.png
-│   │   ├── AEE_sma_10_75.png
-│   │   ├── AKAM_sma_10_175.png
-│   │   ├── ACGL_sma_10_50.png
-│   │   ├── AME_sma_10_125.png
-│   │   ├── ADP_sma_10_50.png
-│   │   ├── equity_curve.png
-│   │   ├── ...
+│── output/
+│   ├── 
+│   │   ├── plotư/
+│   │   │   ├── A_sma_10_50.png
+│   │   │   ├── AAPL_sma_10_125.png
+│   │   │   ├── ABBV_sma_10_100.png
+│   │   │   ├── ABT_sma_10_125.png
+│   │   │   ├── ADSK_sma_10_175.png
+│   │   │   ├── AEE_sma_10_75.png
+│   │   │   ├── AKAM_sma_10_175.png
+│   │   │   ├── ACGL_sma_10_50.png
+│   │   │   ├── AME_sma_10_125.png
+│   │   │   ├── ADP_sma_10_50.png
+│   │   │   ├── equity_curve.png
+│   │   │   ├── ...
 │   ├── per_ticker_params.json
 │   ├── per_trade_summary.csv
 │   ├── performance.csv
