@@ -3,7 +3,7 @@ import os
 import tempfile
 import json
 import logging
-from typing import Optional, Dict, Sequence, List
+from typing import Optional, Dict, Sequence, List, Tuple
 import pandas as pd
 from core import logger, TradeEvent
 import numpy as np
@@ -120,4 +120,12 @@ def events_to_dataframe(events: Sequence[TradeEvent]) -> pd.DataFrame:
 
 
 
+# Chuyển equity_curve dạng list[(date, equity), ...] -> pd.Series(index=datetime, values=equity)
+def _to_series_from_equity_curve(equity_curve: List[Tuple[pd.Timestamp, float]]) -> pd.Series:
+    if equity_curve is None:
+        return pd.Series(dtype=float)
+    dates = [pd.to_datetime(d) for d, _ in equity_curve]
+    vals = [float(v) for _, v in equity_curve]
+    s = pd.Series(index=pd.DatetimeIndex(dates), data=vals).sort_index()
+    return s
 

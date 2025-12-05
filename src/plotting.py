@@ -1,10 +1,12 @@
 # plotting.py
 import os
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
-from core import logger
+from core import logger, compute_drawdown
+from trading_io import _to_series_from_equity_curve
+
 
 # Vẽ biểu đồ giá + SMA short/long + đánh dấu điểm BUY/SELL dựa trên events_df
 def plot_trades_for_ticker(price_df: pd.DataFrame, events_df: pd.DataFrame, short_w: int, long_w: int, out_path: str) -> None:
@@ -26,7 +28,7 @@ def plot_trades_for_ticker(price_df: pd.DataFrame, events_df: pd.DataFrame, shor
 
     # Vẽ đường giá
     ax.plot(
-        t.index, t["Close"],
+        t.index, t["Open"],
         label="Price",
         linewidth=1.2,
         color="#444444",
@@ -144,4 +146,25 @@ def plot_equity_curve(equity_curve: List[Tuple[pd.Timestamp, float]], out_path: 
     plt.close()
 
 
+# Hàm vẽ biểu đồ Drawdown Curve
+def plot_drawdown_curve(equity_curve: List[Tuple[pd.Timestamp, float]],
+                        title: str = "Drawdown Curve",
+                        out_path: Optional[str] = None,
+                        show: bool = True) -> None:
 
+    equity = _to_series_from_equity_curve(equity_curve)
+    if equity.empty:
+        raise ValueError("Equity curve is empty")
+
+    dd = compute_drawdown(equity)
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(dd.index, dd.values)
+    plt.axhline(0, linestyle="--", linewidth=0.7)
+    plt.title(title)
+    plt.xlabel("Date")
+    plt.ylabel("Drawdown (fraction)")
+    plt.grid(True)
+    plt.tight_layout()
+    if out_path:
+        plt.savefig(out_path, bbox_inches="tight")

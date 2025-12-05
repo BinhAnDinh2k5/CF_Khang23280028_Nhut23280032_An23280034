@@ -94,8 +94,7 @@ def replay_and_pairs(events_df: pd.DataFrame, return_book: bool = False):
                     "EntryPrice": lot.get("price"),
                     "ExitPrice": price,
                     "Shares": take,
-                    "RealizedPNL": (price - lot.get("price")) * take,
-                    "HoldingDays": (pd.to_datetime(r["Date"]) - pd.to_datetime(lot.get("date"))).days if lot.get("date") is not None else np.nan,
+                    "RealizedPNL": (price - lot.get("price")) * take
                 })
                 lot["shares"] -= take
                 remaining -= take
@@ -238,3 +237,14 @@ def last_price_up_to(df: pd.DataFrame, date: pd.Timestamp) -> float:
         return float("nan")
 
     return float(df2["Open"].iloc[-1])
+
+
+# Hàm tính drawdown
+def compute_drawdown(equity: pd.Series) -> pd.Series:
+
+    if equity is None or len(equity) == 0:
+        return pd.Series(dtype=float)
+    running_max = equity.cummax()
+    dd = equity / running_max - 1.0
+    dd.name = "drawdown"
+    return dd

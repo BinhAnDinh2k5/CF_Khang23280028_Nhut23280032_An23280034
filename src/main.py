@@ -8,7 +8,7 @@ import numpy as np
 from trading_io import atomic_read_json, atomic_write, save_per_ticker_params, load_per_ticker_params, \
                         export_trade_history, export_performance_metrics, events_to_dataframe
 from backtest import run_backtest
-from plotting import plot_trades_for_ticker, plot_equity_curve
+from plotting import plot_trades_for_ticker, plot_equity_curve, plot_drawdown_curve
 from core import replay_and_pairs, logger, BacktestConfig
 from optimizer import  optimize_sma_per_ticker, optimize_sma
 
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         atr_multiplier=1.0,                 # Hệ số nhân ATR 
         stop_loss_pct=0.08,                 # Mức cắt lỗ cố định 
         take_profit_pct=0.20,               # Mức chốt lời cố định 
-        sell_fraction_on_signal=1.0,        # Tỷ lệ bán khi có tín hiệu SELL 
+        sell_fraction_on_signal=0.5,        # Tỷ lệ bán khi có tín hiệu SELL 
         max_sells_per_day=None,             # Giới hạn số lệnh bán mỗi ngày (None = không giới hạn)
         max_positions_per_day= math.inf,    # Số lệnh BUY tối đa được mở trong 1 ngày giao dịch
         max_positions_in_portfolio= None,    # Số lượng vị thế tối đa được giữ trong danh mục
@@ -177,8 +177,9 @@ if __name__ == "__main__":
         )
     # Vẽ và lưu equity curve của portfolio'
     equity_curve = perf_df.attrs.get("equity_curve", [])
-    out_eq = os.path.join(plots_dir, "equity_curve.png")
-    plot_equity_curve(equity_curve, out_eq)
+    plot_equity_curve(equity_curve, os.path.join(plots_dir, "equity_curve.png"))
+    plot_drawdown_curve(equity_curve, out_path=os.path.join(plots_dir, "drawdown.png"))
+
 
     if not events_df.empty and "Date" in events_df.columns:
         events_df["Date"] = pd.to_datetime(events_df["Date"], errors="coerce")
