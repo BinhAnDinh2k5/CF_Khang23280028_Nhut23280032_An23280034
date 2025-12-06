@@ -216,6 +216,25 @@ project/
 
     logger.info("Per-ticker SMA params computed for %d tickers", len(per_ticker_params))
 
+#Công thức tối ưu:
+    # Các trọng số (tự set up)
+    w1 = 1.0   # Sharpe
+    w2 = 0.5   # Profit Factor
+    w3 = 2.0   # Max Drawdown 
+    w4 = 0.5   # Win rate
+
+score = w1 * Sharpe + w2 * Profit_factor + w3 * MaxDrawDown + w4 * winrate
+
+# Và N_trades < min_trade -> reject hoặc giảm score:
+
+            if n_trades < min_trades:
+                if trade_penalty_mode == "reject":
+                    score = float("nan")
+                    note = f"too_few_trades<{min_trades}"
+                elif trade_penalty_mode == "scale":
+                    factor = (n_trades / min_trades)
+                    score = float(score) * float(factor)
+                    note = f"penalty_trades({n_trades}/{min_trades})"
 ```
 
 4.3. Thực hiện Backtest
@@ -237,7 +256,7 @@ project/
         max_sells_per_day=None,             # Giới hạn số lệnh bán mỗi ngày (None = không giới hạn)
         max_positions_per_day= math.inf,    # Số lệnh BUY tối đa được mở trong 1 ngày giao dịch
         max_positions_in_portfolio= None,    # Số lượng vị thế tối đa được giữ trong danh mục
-        max_pct_per_ticker=0.5,            # Tỷ lệ vốn tối đa phân bổ cho một ticker 
+        max_pct_per_ticker=0.02,            # Tỷ lệ vốn tối đa phân bổ cho một ticker 
         fees_per_order= 0,                  # Phí giao dịch cho mỗi lệnh (mua/bán)
         atr_period=14,                      # Chu kỳ tính ATR
         min_trades= 20,                      # Số lượng giao dịch tối thiểu yêu cầu để mô hình tối ưu được chấp nhận
