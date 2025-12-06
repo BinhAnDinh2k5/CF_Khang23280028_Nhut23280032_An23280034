@@ -294,52 +294,39 @@ score = w1 * Sharpe + w2 * Profit_factor + w3 * MaxDrawDown + w4 * winrate
 ```
 ## 5. Ví dụ minh họa:
 5.1. Hình tín hiệu BUY/SELL cho từng stock
-- Tín hiệu BUY/ SELL của ticker A (với min_trade = 20):
-<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/2be12a0c-07e5-44db-8121-709517802906" />
-- Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 20):
-<img width="2800" height="1400" alt="AKAM_sma_10_175" src="https://github.com/user-attachments/assets/ce09a744-7f28-4416-b7e1-74ffc1292ead" />
-- Tín hiệu BUY/ SELL của ticker AME (với min_trade = 20):
-<img width="2800" height="1400" alt="AME_sma_10_125" src="https://github.com/user-attachments/assets/4a050b15-f7d2-4e45-b01b-e2e042792de1" />
-- Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 20):
-<img width="2800" height="1400" alt="ABBV_sma_10_100" src="https://github.com/user-attachments/assets/2dd0c08e-5b58-4f37-adf3-eddc28ee9238" />
-- Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 20):
-<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/405d6c36-3e43-4166-98dc-ca9c10026359" />
+- Tín hiệu BUY/ SELL của ticker A (với min_trade = 10):
+<img width="2800" height="1400" alt="A_sma_10_50" src="https://github.com/user-attachments/assets/73bb6fcb-d505-4ce9-978f-41946ca28e33" />
+
+- Tín hiệu BUY/ SELL của ticker AKAM (với min_trade = 10):
+<img width="2800" height="1400" alt="AKAM_sma_10_50" src="https://github.com/user-attachments/assets/667263d7-7a9e-471f-b931-6bba5db2cd0a" />
+
+
+- Tín hiệu BUY/ SELL của ticker AME (với min_trade = 10):
+<img width="2800" height="1400" alt="AME_sma_10_50" src="https://github.com/user-attachments/assets/5cd5334e-d3bf-45bf-8330-be9fa2cffc80" />
+
+
+- Tín hiệu BUY/ SELL của ticker ABBV (với min_trade = 10):
+<img width="2800" height="1400" alt="ABBV_sma_10_50" src="https://github.com/user-attachments/assets/0a2b7a07-a2a7-474d-a2d5-c540d3315adc" />
+
+
+- Tín hiệu BUY/ SELL của ticker ACGL (với min_trade = 10):
+<img width="2800" height="1400" alt="ACGL_sma_10_50" src="https://github.com/user-attachments/assets/ec4ab7e9-58c5-4d00-acf6-e78003924115" />
+
+
 5.2. Hình Equity Curve và DrawDown chung của portfolio:
-<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/2be576bc-c92c-4f55-b841-463167bfff71" />
-<img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/bfa9297b-518d-4b3c-a260-907e99b76c5e" />
+<img width="2400" height="1200" alt="equity_curve" src="https://github.com/user-attachments/assets/e50c44ee-1870-4d94-b5d2-631ed2837476" />
+<img width="989" height="590" alt="drawdown" src="https://github.com/user-attachments/assets/6e81a90a-2a2e-4989-a34b-88a69f59cd84" />
+
+
 
 5.3. Bảng trades rút gọn
+<img width="777" height="483" alt="image" src="https://github.com/user-attachments/assets/22e93a35-bd87-4dc1-9a14-8bbf282b7c7d" />
 
-<img width="692" height="366" alt="Screenshot 2025-12-05 182518" src="https://github.com/user-attachments/assets/5afab768-ed33-42ae-b06c-8684dfac67e6" />
+
 
 5.4. Performance Metrics
 Bảng metrics của các ticker (Với min_trade 10)
-| Ticker | NTrades | WinRate     | Realized_pnl | PNL          | Avg_realized_pnl | ProfitFactor | Remaining_share_value |
-| ------ | ------- | ----------- | ------------ | ------------ | ---------------- | ------------ | --------------------- |
-| A      | 9       | 0.111111111 | -1227.325121 | -1221.938102 | -136.3694579     | 0.137463882  | 123.4199982           |
-| AAPL   | 2       | 0.5         | -333.3699266 | 95.81423138  | -166.6849633     | 0.366469901  | 4073.810889           |
-| ABBV   | 7       | 0.142857143 | -1853.242137 | 1222.2953    | -264.7488767     | 0.146206071  | 21924.88166           |
-| ABT    | 4       | 0.5         | 1375.595629  | 1452.743064  | 343.8989072      | 46.06404626  | 8333.124992           |
-| ADSK   | 3       | 0.333333333 | 493.9502106  | 493.9502106  | 164.6500702      | 1.334756722  | 0                     |
-| AEE    | 5       | 0.6         | 601.3588313  | 625.5439183  | 120.2717663      | 37.41354239  | 518.4999847           |
-| ACGL   | 10      | 0.4         | 2451.59475   | 2451.59475   | 245.159475       | 1.889170153  | 0                     |
-| AME    | 1       | 1           | 586.3180665  | 856.0867315  | 586.3180665      |              | 4482.719971           |
-| ADP    | 8       | 0.375       | 84.71240477  | 84.71240477  | 10.5890506       | 1.266530005  | 0                     |
-
-
-Bảng metrics của các ticker (Với min_trade 20)
-| Ticker | NTrades | WinRate | Realized_pnl | PNL | Avg_realized_pnl | ProfitFactor | Remaining_share_value |
-|--------|---------|---------|---------------|---------------|------------------|---------------|------------------------|
-| A     | 9 | 0.111111111 | -1162.803475 | -1157.416456 | -129.2003862 | 0.13916376 | 123.4199982 |
-| AAPL  | 2 | 0.5 | -378.473648 | 131.1825395 | -189.236824 | 0.337538067 | 4837.650431 |
-| ABBV  | 7 | 0.142857143 | -1991.910974 | 1021.494394 | -284.5587105 | 0.067528553 | 21481.95476 |
-| ABT   | 4 | 0.5 | 1074.465971 | 1171.206405 | 268.6164927 | 9.799785195 | 10449.4742 |
-| ADSK  | 3 | 0.333333333 | 325.0002441 | 325.0002441 | 108.3334147 | 1.20388977 | 0 |
-| AEE   | 5 | 0.6 | 307.2379128 | 336.2600172 | 61.44758255 | 8.839640398 | 622.1999817 |
-| AKAM  | 2 | 0 | -1156.280472 | -1156.280472 | -578.1402359 | 0 | 0 |
-| ACGL  | 10 | 0.4 | 3599.881588 | 3599.881588 | 359.9881588 | 3.916970496 | 0 |
-| AME   | 1 | 1 | 561.5938107 | 1325.938361 | 561.5938107 |  | 12701.03992 |
-| ADP   | 8 | 0.375 | 71.10521176 | 71.10521176 | 8.88815147 | 1.25218235 | 0 |
+<img width="892" height="262" alt="image" src="https://github.com/user-attachments/assets/cd68c8a9-cff0-4e5f-9a50-3898eec2108e" />
 
 Bảng metrics của Portfolio (min_trade 10 và 20):
 | Metric                | Value (atr và min_trade 10)       |  Value (atr và min_trade 20)       | Value (non-atr và min_trade 10) |  Value (non-atr và min_trade 20) |
