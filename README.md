@@ -114,7 +114,7 @@ project/
 ```
 ## 4. RUN:
 4.1. Chuẩn bị dữ liệu:
-  - Chạy file yfinance_crawl_data.ipynb lấy các ticker trong khoảng 10 năm từ 1/10/2015 đến 1/10/2025 từ trang yahoo finance bằng API
+  - Chạy file yfinance_crawl_data.ipynb lấy các ticker trong khoảng 10-7 năm từ 1/10/2015 đến 1/10/2025 từ trang yahoo finance bằng API
   - Nạp dữ liệu của 50 ticker và thư mục data: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP,....
   - Load dữ liệu và chia 2 tập train, validation theo tỉ lệ 7:3.
 ```
