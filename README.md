@@ -34,7 +34,7 @@ project/
 │   ├── trading_io.py
 │   ├── main.py
 │── output/
-│   ├── output_atr_min_trade_10/
+│   ├── output_atr_min_trade_0_new/
 │   │   ├── plots/
 │   │   │   ├── A_sma_10_50.png
 │   │   │   ├── AAPL_sma_10_125.png
@@ -53,63 +53,11 @@ project/
 │   │   ├── performance.csv
 │   │   ├── portfolio_daily_returns.csv
 │   │   ├── trade_history.csv
-│   ├── output_atr_min_trade_20/
-│   │   ├── plots/
-│   │   │   ├── A_sma_10_50.png
-│   │   │   ├── AAPL_sma_10_125.png
-│   │   │   ├── ABBV_sma_10_100.png
-│   │   │   ├── ABT_sma_10_125.png
-│   │   │   ├── ADSK_sma_10_175.png
-│   │   │   ├── AEE_sma_10_75.png
-│   │   │   ├── AKAM_sma_10_175.png
-│   │   │   ├── ACGL_sma_10_50.png
-│   │   │   ├── AME_sma_10_125.png
-│   │   │   ├── ADP_sma_10_50.png
-│   │   │   ├── equity_curve.png
-│   │   │   ├── ...
-│   │   ├── per_ticker_params.json
-│   │   ├── per_trade_summary.csv
-│   │   ├── performance.csv
-│   │   ├── portfolio_daily_returns.csv
-│   │   ├── trade_history.csv
-│   ├── output_non_atr_min_trade_10/
-│   │   ├── plots/
-│   │   │   ├── A_sma_10_50.png
-│   │   │   ├── AAPL_sma_10_125.png
-│   │   │   ├── ABBV_sma_10_100.png
-│   │   │   ├── ABT_sma_10_125.png
-│   │   │   ├── ADSK_sma_10_175.png
-│   │   │   ├── AEE_sma_10_75.png
-│   │   │   ├── AKAM_sma_10_175.png
-│   │   │   ├── ACGL_sma_10_50.png
-│   │   │   ├── AME_sma_10_125.png
-│   │   │   ├── ADP_sma_10_50.png
-│   │   │   ├── equity_curve.png
-│   │   │   ├── ...
-│   │   ├── per_ticker_params.json
-│   │   ├── per_trade_summary.csv
-│   │   ├── performance.csv
-│   │   ├── portfolio_daily_returns.csv
-│   │   ├── trade_history.csv
-│   ├── output_non_atr_min_trade_20/
-│   │   ├── plots/
-│   │   │   ├── A_sma_10_50.png
-│   │   │   ├── AAPL_sma_10_125.png
-│   │   │   ├── ABBV_sma_10_100.png
-│   │   │   ├── ABT_sma_10_125.png
-│   │   │   ├── ADSK_sma_10_175.png
-│   │   │   ├── AEE_sma_10_75.png
-│   │   │   ├── AKAM_sma_10_175.png
-│   │   │   ├── ACGL_sma_10_50.png
-│   │   │   ├── AME_sma_10_125.png
-│   │   │   ├── ADP_sma_10_50.png
-│   │   │   ├── equity_curve.png
-│   │   │   ├── ...
-│   │   ├── per_ticker_params.json
-│   │   ├── per_trade_summary.csv
-│   │   ├── performance.csv
-│   │   ├── portfolio_daily_returns.csv
-│   │   ├── trade_history.csv
+│   ├── output_atr_min_trade_10_new/
+│   ├── output_atr_min_trade_20_new/
+│   ├── output_atr_min_trade_0_sell_fraction_0_5/
+│   ├── output_atr_min_trade_10_sell_fraction_0_5/
+│   ├── output_atr_min_trade_20_sell_fraction_0_5/
 │── README.md
 ```
 ## 4. RUN:
@@ -412,22 +360,22 @@ Bảng metrics của Portfolio (min_trade 10 và 20):
 | Calmar                | 0.364770663  | 0.22019| 0.635 | 0.7669 |
 
 Bảng metrics của Portfolio (min_trade 0 và 10):
-| Metric                | Value (atr và min_trade 0)       |  Value (atr và min_trade 10)       | Value (non-atr và min_trade 0) |  Value (non-atr và min_trade 10) |
-| --------------------- | ------------ |------------ | ------------ |  ------------ |
-| NTrades               | 417          | 320 | 510 | 487 |
-| WinRate               | 0.39568  | 0.390625 | 0.4 | 0.40041| 
-| Realized_pnl          | 10649.8674  | 7336.0698 | 5245.1935| 4689.1647|
-| PNL                   | 12236.764  | 12846.941 | 9685.564| 9165.1355|
-| PNL (%)               | 12.236      | 12.846    | 9.685 | 9.165|
-| Avg_realized_pnl      | 25.5392  | 22.9252 | 10.284 | 9.6286 |
-| ProfitFactor          | 1.5649  | 1.1178 | 1.2285 | 1.2124 |
-| Remaining_share_value | 35336.196  | 109240.448  | 60049.2919 | 53393.89188 |
-| FinalCash             | 76900.567  | 3606.492999 | 49636.2724 | 55771.2436 |
-| FinalEquity           | 112236.764  | 112846.941 | 109685.564 | 109165.1355|
-| CAGR                  | 0.03914  | 0.041 | 0.03123 | 0.0296|
-| Sharpe                | -0.286331  | -0.00582 | -0.35018 | -0.3994 |
-| MaxDrawdown           | -0.0457 | -0.18631 | -0.04917 | -0.038594|
-| Calmar                | 0.8559  | 0.22019| 0.635 | 0.7669 |
+| Metric                | Value (min_trade 0 và sell fraction 1)       |  Value (min_trade 10 và sell fraction 1)       | Value (min_trade 20 và sell fraction 1) |  Value (min_trade 0 và sell fraction 0.5) | Value (min_trade 10 và sell fraction 0.5) | Value (min_trade 20 và sell fraction 0.5) |
+| --------------------- | ------------ |------------ | ------------ |  ------------ | ------------ | ------------ |
+| NTrades               | 417          | 417 | 370 | 487 | | |
+| WinRate               | 0.39568  | 0.39568 | 0.3891| 0.40041| | | 
+| Realized_pnl          | 10649.8674  | 10649.8674 | 9445.858| 4689.1647| | |
+| PNL                   | 12236.764  | 12236.764 | 10875.4575| 9165.1355| | |
+| PNL (%)               | 12.236      | 12.236   | 10.875 | 9.165| | |
+| Avg_realized_pnl      | 25.5392  | 25.5392 | 25.5293 | 9.6286 | | |
+| ProfitFactor          | 1.5649  | 1.5649 | 1.5253 | 1.2124 | | |
+| Remaining_share_value | 35336.196  | 35336.196  | 29945.5421 | 53393.89188 | | |
+| FinalCash             | 76900.567  | 76900.567 | 80929.915 | 55771.2436 | | |
+| FinalEquity           | 112236.764  | 112236.764 | 110875.4575 | 109165.1355| | |
+| CAGR                  | 0.03914  | 0.03914| 0.03493 | 0.0296| | |
+| Sharpe                | -0.286331  | -0.286331 | -0.42965 | -0.3994 | | |
+| MaxDrawdown           | -0.0457 | -0.0457 | -0.0421 | -0.038594| | |
+| Calmar                | 0.8559  | 0.8559 | 0.829817 | 0.7669 | | |
 
 
 5.5. Tham số tối ưu:
