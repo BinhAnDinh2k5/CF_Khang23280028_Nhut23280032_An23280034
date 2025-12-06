@@ -25,14 +25,14 @@ if __name__ == "__main__":
         atr_multiplier=1.0,                 # Hệ số nhân ATR 
         stop_loss_pct=0.08,                 # Mức cắt lỗ cố định 
         take_profit_pct=0.20,               # Mức chốt lời cố định 
-        sell_fraction_on_signal=0.5,        # Tỷ lệ bán khi có tín hiệu SELL 
+        sell_fraction_on_signal=1,        # Tỷ lệ bán khi có tín hiệu SELL 
         max_sells_per_day=None,             # Giới hạn số lệnh bán mỗi ngày (None = không giới hạn)
         max_positions_per_day= math.inf,    # Số lệnh BUY tối đa được mở trong 1 ngày giao dịch
         max_positions_in_portfolio= None,    # Số lượng vị thế tối đa được giữ trong danh mục
-        max_pct_per_ticker=0.5,            # Tỷ lệ vốn tối đa phân bổ cho một ticker 
+        max_pct_per_ticker=0.02,            # Tỷ lệ vốn tối đa phân bổ cho một ticker 
         fees_per_order= 0,                  # Phí giao dịch cho mỗi lệnh (mua/bán)
         atr_period=14,                      # Chu kỳ tính ATR
-        min_trades= 20,                      # Số lượng giao dịch tối thiểu yêu cầu để mô hình tối ưu được chấp nhận
+        min_trades= 10,                      # Số lượng giao dịch tối thiểu yêu cầu để mô hình tối ưu được chấp nhận
         trade_penalty_mode="scale",         # Cách xử lý khi số trade < min_trades: "scale" giảm điểm hoặc "reject" loại bỏ
     )
 

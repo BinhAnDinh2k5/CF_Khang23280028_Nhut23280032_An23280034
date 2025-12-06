@@ -68,44 +68,6 @@ def compute_priority_score(df: pd.DataFrame, short_w: int, long_w: int, remove_l
     return score
 
 
-# Tính điểm ưu tiên mua cho 1 cổ theo SMA/momentum/vol
-def compute_priority_score(df: pd.DataFrame, short_w: int, long_w: int, remove_last: bool = True ) -> float:
-    if len(df) <= long_w:
-        return 0.0
-    
-    df_hist = df.copy()
-
-    if remove_last:
-        # loại bỏ bar gần nhất để tránh look-ahead
-        df_hist = df.iloc[:-1]
-
-    sma_short_series = df_hist["Close"].rolling(short_w, min_periods=short_w).mean().dropna()
-    sma_long_series = df_hist["Close"].rolling(long_w, min_periods=long_w).mean().dropna()
-    if sma_short_series.empty or sma_long_series.empty:
-        return 0.0
-    
-    sma_short = sma_short_series.iloc[-1]
-    sma_long = sma_long_series.iloc[-1]
-
-    sma_strength = (sma_short / sma_long) - 1
-
-    if len(df_hist) >= 20:
-        momentum = df_hist["Close"].iloc[-1] / df_hist["Close"].iloc[-20] - 1
-    else:
-        momentum = 0.0
-
-    vol = df_hist["Close"].pct_change().rolling(20, min_periods=20).std().dropna()
-    
-    vol = vol.iloc[-1] if not vol.empty else 1.0
-    if np.isnan(vol) or vol == 0:
-        vol = 1.0
-
-    # Trộn các yếu tố thành thành một điểm tổng hợp
-    score = sma_strength * 0.5 + momentum * 0.4 + (1 / vol) * 0.1
-
-    return score
-
-
 # Tính số cổ phiếu cần mua dựa trên các method
 def compute_position_size(
     cash: float,
