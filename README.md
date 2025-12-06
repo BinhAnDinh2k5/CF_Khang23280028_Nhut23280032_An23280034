@@ -1,12 +1,12 @@
 # PROJECT_NAME: DESIGN A TRADING STRATEGY FOR US MARKET
 Description: Thiết kế trading strategy của thị trường US bằng SMA technical indicator có kết hợp tối ưu tham số về timeframe và độ ưu tiên của từng ticker khi giao dịch. Trading strategy được thử với 50 mã cổ phiếu: A, AAPL, ABBV, ABT, ACGL, ACN, ADBE, ADI, ADM, ADP... và chỉ áp dụng với phương pháp Long (mua thấp - bán cao).
-## 1. MAIN USAGE:
+## 1. CHỨC NĂNG CHÍNH:
 - Apply multi-ticker backtesting.
 - Sử dụng đồng thời 2 đường SMA(A) và SMA(B) (với A < B) để tìm kiếm signal, trong đó đường SMA(A) đóng vai trò là đường thể hiện sự biến động còn SMA(B) là đường nền, ổn định hơn. 
-- Có tối ưu tham số A, B và lựa chọn thứ tự ưu tiên thực thi lệnh mua/bán các Equity trong Portfolio.
-## 2. SETUP:
+- Có tối ưu tham số A, B và lựa chọn thứ tự ưu tiên thực thi lệnh mua/bán các ticker trong Portfolio.
+## 2. THIẾT LẬP:
 
-## 3. PROJECT STRUCTURE:
+## 3. CẤU TRÚC DỰ ÁN:
 ```
 project/
 │── data/
@@ -407,7 +407,7 @@ Bảng metrics của Portfolio (min_trade 10 và 20):
 | AME   | 10 | 125 |
 | ADP   | 10 | 50 |
 
-## 6. PARAMETERS:
+## 6. THAM SỐ:
 ```
     config = BacktestConfig(
         initial_cash=100_000,               # Vốn ban đầu 
