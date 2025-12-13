@@ -31,10 +31,10 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 ```
 
 ## Cách sử dụng
-
-1. Đảm bảo file dữ liệu `KO.csv` được đặt trong thư mục `Data` (đường dẫn tương đối từ dự án).
-2. Mở và chạy notebook `main.ipynb` trong Jupyter Notebook hoặc JupyterLab.
-3. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
+1. Dùng notebook `yfinance_crawl_data.ipynb` để crawl dữ liệu cổ phiếu Coca-cola về thư mục 'Data'
+2. Đảm bảo file dữ liệu `KO.csv` được đặt trong thư mục `Data` (đường dẫn tương đối từ dự án).
+3. Mở và chạy notebook `main.ipynb` trong Jupyter Notebook hoặc JupyterLab.
+4. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
 
 ## Cấu trúc dự án
 
