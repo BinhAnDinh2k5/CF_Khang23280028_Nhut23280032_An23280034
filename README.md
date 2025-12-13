@@ -30,12 +30,6 @@ Cài đặt các thư viện cần thiết bằng pip:
 pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 ```
 
-## Cách sử dụng
-1. Dùng notebook `yfinance_crawl_data.ipynb` để crawl dữ liệu cổ phiếu Coca-cola về thư mục 'Data'
-2. Đảm bảo file dữ liệu `KO.csv` được đặt trong thư mục `Data` (đường dẫn tương đối từ dự án).
-3. Mở và chạy notebook `main.ipynb` trong Jupyter Notebook hoặc JupyterLab.
-4. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
-
 ## Cấu trúc dự án
 
 - `main.ipynb`: Notebook chính chứa toàn bộ quy trình phân tích.
@@ -47,6 +41,12 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 - `pattern_up_down.py`: Module phân tích pattern up down.
 - `trading_strategy_season.py`: Module chạy chiến lược giao dịch theo mùa.
 - `Data/`: Thư mục chứa dữ liệu đầu vào (KO.csv).
+
+## Cách sử dụng
+1. Dùng notebook `yfinance_crawl_data.ipynb` để crawl dữ liệu cổ phiếu Coca-cola về thư mục 'Data'
+2. Đảm bảo file dữ liệu `KO.csv` được đặt trong thư mục `Data` (đường dẫn tương đối từ dự án).
+3. Mở và chạy notebook `main.ipynb` trong Jupyter Notebook hoặc JupyterLab.
+4. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
 
 ## Kết quả
 
