@@ -9,10 +9,11 @@ Dự án sẽ tập trung vào các khía cạnh phân tích dữ liệu như xu
 ## Mô tả
 
 Dự án này thực hiện phân tích dữ liệu khám phá trên dữ liệu giá cổ phiếu của Coca-Cola, từ đó đưa ra chiến lược giao dịch phù hợp. Các nội dung bao gồm:
+- Crawl dữ liệu cổ phiếu 
+- Phát hiện ngoại lệ (Outliers)
 - Kiểm tra xu hướng trung bình (Mean Reversion)
 - Theo dõi xu hướng (Trend Following)
 - Phân tích hiệu ứng lịch (Calendar Effects)
-- Phát hiện ngoại lệ (Outliers)
 - Phân tích mẫu lên xuống (Up-Down Patterns)
 - Chiến lược giao dịch theo mùa (Seasonal Trading Strategy)
 
@@ -26,7 +27,7 @@ Dự án này thực hiện phân tích dữ liệu khám phá trên dữ liệu
 Cài đặt các thư viện cần thiết bằng pip:
 
 ```
-pip install pandas matplotlib numpy talib scipy statsmodels
+pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 ```
 
 ## Cách sử dụng
