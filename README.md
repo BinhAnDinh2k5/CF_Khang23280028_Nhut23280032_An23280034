@@ -38,6 +38,7 @@ pip install pandas matplotlib numpy talib scipy statsmodels
 ## Cấu trúc dự án
 
 - `main.ipynb`: Notebook chính chứa toàn bộ quy trình phân tích.
+- `yfinance_crawl_data.ipynb`: Notebook crawl dữ liệu từ trang yahoo finance
 - `check_trend_following.py`: Module kiểm tra và phân tích pattern trend-following.
 - `check_mean_reversion.py`: Module kiểm tra và phân tích pattern mean_reversion.
 - `calendar_analysis.py`: Module phân tích Calendar effect.
