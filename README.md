@@ -54,6 +54,7 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 
 ## Một số điểm chính trong phần thực hành:
 ### Về phân tích EDA bộ dữ liệu Coca - Cola:
+**CHI TIẾT TRONG FILE EDA.ipynb**  
 Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến năm 2014:
 1. Phát hiện các outliers:
 - Bộ dữ liệu cho thấy có outliers nằm ở khoảng cuối năm 2008 gần đầu năm 2009. Điều này phù hợp với tình huống thực tế, bởi trong khoảng thời gian này xảy ra cuộc khủng hoảng kinh tế lớn (cuộc khủng hoảng kinh tế tại Hoa Kỳ năm 2008-2009) nên ảnh hưởng trực tiếp đến giá cổ phiếu dẫn đến giá cổ phiếu biến động lớn --> outliers  
@@ -90,15 +91,15 @@ trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 
 --> Điều này cho thấy hành vi giá không thiên mạnh về trend-following, và cũng không quá thiên về mean-reversion.  
 **CHÈN ẢNH**
 ### Chiến lược giao dịch cổ phiếu Coca - Cola:
-**CHI TIẾT TRONG FILE trading_strategy_season_backtest.ipynb**  
-
 Dựa trên phân tích trước về đặc điểm của cổ phiếu Coca-Cola, ta ghi nhận một số điểm quan trọng:
 - Không có xu hướng mạnh: ADX thấp và autocorrelation âm cho thấy giá không duy trì trend dài hạn; do đó các chiến lược trend-following kém hiệu quả.
 - Mean-reversion cũng không quá rõ ràng: không đủ mạnh để xây dựng chiến lược mean-reversion độc lập.
 - Mùa vụ rõ rệt: Hiệu ứng mùa vụ thể hiện khá ổn định — cổ phiếu thường mạnh vào quý Q3 và Q4, đặc biệt các tháng 3 / 9 / 11, trong khi tháng 1 thường yếu.
 Từ các quan sát này, ta quyết định ưu tiên một chiến lược mùa vụ ngắn hạn thay vì mean-reversion hoặc trend.
 
-#### Chiến lược giao dịch dựa trên Pattern seasonality: 
+#### Chiến lược giao dịch dựa trên Pattern seasonality:
+**CHI TIẾT TRONG FILE trading_strategy_season_backtest.ipynb**  
+
 Chiến lược này chỉ hoạt động trong 2 giai đoạn: Tháng 3 - Tháng 5 và Tháng 9 - Tháng 11
 1. Mua Ban Đầu (Entry)
 - Thời điểm: Ngày giao dịch đầu tiên của tháng (ví dụ: ngày 1/3, 1/9)
