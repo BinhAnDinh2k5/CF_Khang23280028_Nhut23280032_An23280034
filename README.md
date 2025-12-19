@@ -75,10 +75,7 @@ Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến
   - autocorr = -0.07382 < 0 : cho thấy returns có khuynh hướng đảo chiều nhẹ, không có sự nối tiếp rõ rệt.
   - adx_median = 21.24095 > 20 => ADX trung vị lớn 20 nhưng không quá nhiều, chứng tỏ xu hướng thị trường chưa quá mạnh, không bền vững.
   - total_crosses_per_year: 20.31105 => nghĩa là trung bình khoảng 1 lần cắt mỗi ~12-13 ngày giao dịch, có hơi hướng biến động ngắn hạn.  
-**CHÈN ẢNH**  
-Nhận xét: nhóm em cảm thấy, theo hình ảnh trực quan về giá ta vẫn có thể quan sát được pattern trend following và pattern mean-reversion ở các khoảng thời gian nhỏ hơn và vẫn có thể dùng các pattern này để thiết kế trading strategy cho cổ phiếu của Coca Cola --> có thể sử dụng các đường SMA ngắn hơn ví dụ như một tháng hay một tuần (SMA 21) để xem pattern trend following hoặc mean-reversion.
-Hoặc ta có thể kết hợp cả 2 phần lại, vì nhóm em quan sát được bộ dữ liệu Coca Cola trong khoảng thời gian từ năm 2006 tới năm 2010 thì giao dộng quanh đường trung bình ở giá 15 --> có thể dùng mean-reversion ở đây. Sau đó thì stock có xu hướng tăng dần đều và tăng nhanh nên em sẽ dùng chiến lược giao dịch theo trend following.  
-**CHÈN ẢNH STOCK**  
+**CHÈN ẢNH**   
 
 4. Kiểm tra đặc điểm của cổ phiếu Coca Cola theo return từng tháng và từng quý:
 trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 3, 9 và 11 là các tháng có trung bình return cao nhất và các khoảng thời gian từ tháng 3-5 và tháng 9-11 cũng thường xuyên có lợi nhuận dương và tăng trưởng mạnh ở các năm (Điều này có thể do các khoảng thời gian này rơi vào mùa lễ hội và các ngày nghỉ lễ lớn ở các quốc gia tiêu thụ lượng lớn Coca Cola ví dụ như các ngày lễ lớn ở Mexico vào 5/5 hay 1-2/11 hay Independence day vào 16/9,...). Do đó ta có thể xây dựng một chiến lược giao dịch theo mùa vào 2 khoảng thời gian từ tháng 3-5 và tháng 9-11 hằng năm.  
@@ -199,4 +196,9 @@ Dự án cung cấp các biểu đồ và thống kê về:
 - Phân tích xu hướng và ngoại lệ
 - Các chỉ báo kỹ thuật
 - Hiệu suất chiến lược giao dịch
+
+
+Nhận xét: nhóm em cảm thấy, theo hình ảnh trực quan về giá ta vẫn có thể quan sát được pattern trend following và pattern mean-reversion ở các khoảng thời gian nhỏ hơn và vẫn có thể dùng các pattern này để thiết kế trading strategy cho cổ phiếu của Coca Cola --> có thể sử dụng các đường SMA ngắn hơn ví dụ như một tháng hay một tuần (SMA 21) để xem pattern trend following hoặc mean-reversion.
+Hoặc ta có thể kết hợp cả 2 phần lại, vì nhóm em quan sát được bộ dữ liệu Coca Cola trong khoảng thời gian từ năm 2006 tới năm 2010 thì giao dộng quanh đường trung bình ở giá 15 --> có thể dùng mean-reversion ở đây. Sau đó thì stock có xu hướng tăng dần đều và tăng nhanh nên em sẽ dùng chiến lược giao dịch theo trend following.  
+**CHÈN ẢNH STOCK** 
 
