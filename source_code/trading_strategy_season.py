@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from typing import Optional, Iterable
-
+import numpy as np
 
 # Tham số mặc định
 INITIAL_CAPITAL = 100000
@@ -57,7 +57,7 @@ def run_strategy(df,
         raise KeyError("DataFrame phải có cột Open và Close")
 
     idx = df.index
-    periods = [(3, 7), (10, 12)]
+    periods = [(3, 5), (9, 11)]
     capital = float(initial_capital)
 
     trades = []
@@ -235,3 +235,116 @@ def plot_trades_by_year(df, trades_df, date_fmt="%m-%Y", show_legend=True):
 
 
         plt.show()
+
+# Tính thông số cơ bản
+def compute_basic_metrics(trades_df, initial_capital=INITIAL_CAPITAL):
+    if trades_df.empty:
+        return None
+
+    df = trades_df.copy()
+
+    # ---------- 1. Number of trades ----------
+    n_trades = len(df)
+
+    # ---------- 2. Total return ----------
+    final_capital = df.iloc[-1]["capital_after"]
+    total_return = final_capital / initial_capital - 1
+
+    # ---------- 3. Win rate ----------
+    win_rate = (df["return_pct"] > 0).mean()
+
+    # ---------- 4. Equity curve ----------
+    equity = pd.Series(
+        [initial_capital] + df["capital_after"].tolist()
+    )
+
+    # ---------- 5. Max Drawdown ----------
+    running_max = equity.cummax()
+    drawdown = (equity - running_max) / running_max
+    max_drawdown = drawdown.min()   # giá trị âm
+
+    # ---------- 6. CAGR ----------
+    start_capital = equity.iloc[0]
+    end_capital = equity.iloc[-1]
+
+    start_date = df["entry_date"].iloc[0]
+    end_date = df["exit_date"].iloc[-1]
+
+    num_years = (end_date - start_date).days / 365.25
+
+    if num_years <= 0:
+        cagr = np.nan
+    else:
+        cagr = (end_capital / start_capital) ** (1 / num_years) - 1
+
+
+    return {
+        "Number of trades": n_trades,
+        "Total return (%)": total_return * 100,
+        "Win rate (%)": win_rate * 100,
+        "CAGR (%)": cagr * 100,
+        "Max drawdown (%)": max_drawdown * 100
+    }
+
+def plot_equity_curve(trades_df, initial_capital, title="Equity Curve"):
+    if trades_df.empty:
+        return
+
+    df = trades_df.copy()
+    df["entry_date"] = pd.to_datetime(df["entry_date"])
+    df["exit_date"] = pd.to_datetime(df["exit_date"])
+
+    df = df.sort_values("exit_date").reset_index(drop=True)
+
+    # Tạo equity series
+    equity_dates = [df["entry_date"].iloc[0]] + df["exit_date"].tolist()
+    equity_values = [initial_capital] + df["capital_after"].tolist()
+
+    equity = pd.Series(equity_values, index=equity_dates)
+
+    # Plot
+    plt.figure(figsize=(12, 5))
+    plt.plot(equity.index, equity.values, linewidth=2)
+    plt.title(title)
+    plt.xlabel("Date")
+    plt.ylabel("Equity")
+    plt.grid(alpha=0.3)
+    plt.show()
+
+    return equity
+
+
+# Vẽ đồ thị equity & drawdown
+def plot_equity_and_drawdown(trades_df, initial_capital, title="Equity & Drawdown"):
+    if trades_df.empty:
+        return
+
+    df = trades_df.copy()
+    df["entry_date"] = pd.to_datetime(df["entry_date"])
+    df["exit_date"] = pd.to_datetime(df["exit_date"])
+    df = df.sort_values("exit_date").reset_index(drop=True)
+
+    # Equity
+    equity_dates = [df["entry_date"].iloc[0]] + df["exit_date"].tolist()
+    equity_values = [initial_capital] + df["capital_after"].tolist()
+    equity = pd.Series(equity_values, index=equity_dates)
+
+    # Drawdown
+    running_max = equity.cummax()
+    drawdown = (equity - running_max) / running_max
+
+    # Plot
+    fig, ax1 = plt.subplots(figsize=(13, 6))
+
+    ax1.plot(equity.index, equity.values, linewidth=2)
+    ax1.set_ylabel("Equity")
+    ax1.set_title(title)
+    ax1.grid(alpha=0.3)
+
+    ax2 = ax1.twinx()
+    ax2.fill_between(drawdown.index, drawdown.values * 100, 0, alpha=0.3)
+    ax2.set_ylabel("Drawdown (%)")
+
+    plt.show()
+
+    return equity, drawdown
