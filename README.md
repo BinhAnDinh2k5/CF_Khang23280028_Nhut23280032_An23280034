@@ -119,8 +119,8 @@ Hình ảnh giao dịch từng năm:
 <img width="839" height="361" alt="image" src="https://github.com/user-attachments/assets/c9ba7c93-3724-48cd-994b-857543b977ab" />
 <img width="1116" height="474" alt="image" src="https://github.com/user-attachments/assets/d57b85ab-b27c-42ef-be58-619ea8e30dd1" />
 
-Đánh giá chiến lược:
-`
+**Đánh giá chiến lược:**
+
 | Metric              | Value   |
 |---------------------|---------|
 | Number of trades    | 61      |
@@ -128,12 +128,12 @@ Hình ảnh giao dịch từng năm:
 | Win rate (%)        | 59.02   |
 | CAGR (%)            | 6.20    |
 | Max drawdown (%)    | -26.57  |
-`
-Nhận xét
+
+**Nhận xét**
 - Tổng lợi nhuận đạt 74.34%, chứng tỏ chiến lược có khả năng sinh lời. Tỷ lệ thắng 59.02% ở mức khá, cho thấy các tín hiệu giao dịch có độ tin cậy tương đối tốt.
 - Tuy nhiên, CAGR chỉ đạt 6.20% mỗi năm, trong khi mức drawdown tối đa lên tới -26.57%, cho thấy chiến lược vẫn chịu rủi ro giảm vốn tương đối lớn so với mức tăng trưởng đạt được.
 
-Yearly Performance:
+**Yearly Performance:**
 | Year | Return (%) | Contribution (%) |
 |------|------------|------------------|
 | 2016 | 0.19       | 0.26             |
@@ -147,18 +147,18 @@ Yearly Performance:
 | 2024 | -5.13      | -12.25           |
 | 2025 | 3.57       | 8.07             |
 
-Consistency Metrics:
+**Consistency Metrics:**
 | Metric                    | Value   |
 |---------------------------|---------|
 | Positive year ratio (%)   | 90.00   |
 | Max year contribution (%) | 27.01   |
 
-Nhận xét:
+**Nhận xét:**
 - Positive year ratio: 90.00% --> Khoảng 9/10 số năm có lợi nhuận dương, thể hiện sự ổn định tương đối của chiến lược qua các năm. Năm duy nhất có return âm là năm 2024, nguyên nhân có thể do yếu tố bên ngoài.
 - Max year contribution: 27.01% --> phần trăm lợi nhuận của năm cao nhất lên tới 27.01% nhưng không áp đảo với các năm còn lại.
 - Với hầu hết các lợi nhuần đều từ 8% đến hơn 20% thì cao hơn so với lãi suất gửi ngân hàng bình quân ở Việt Nam --> Có thể đánh giá chiến lược giao dịch này vẫn mang lại lợi nhuận tốt hơn, nhưng vẫn chịu rủi ro cao hơn so với khi thực hiện các biện pháp đầu tư sinh lời khác như gửi tiệt kiệm,...
 
-Seasonal Performance Summary:
+**Seasonal Performance Summary:**
 | Year | Season   | Return (%) | Equity Change | Contribution (%) |
 |------|----------|------------|---------------|------------------|
 | 2016 | Mar-May  | 3.88       | 3,884         | 1992.97          |
