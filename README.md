@@ -53,10 +53,10 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 5. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
 
 ## Một số điểm chính trong phần thực hành:
-#### Về phân tích EDA bộ dữ liệu Coca - Cola:
+### Về phân tích EDA bộ dữ liệu Coca - Cola:
 Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến năm 2014:
 1. Phát hiện các outliers:
-- Bộ dữ liệu cho thấy có outliers nằm ở khoảng cuối năm 2008 gần đầu năm 2009. Điều này phù hợp với tình huống thực tế, bởi trong khoảng thời gian này xảy ra cuộc khủng hoảng kinh tế lớn (cuộc khủng hoảng kinh tế tại Hoa Kỳ năm 2008-2009) nên ảnh hưởng trực tiếp đến giá cổ phiếu dẫn đến giá cổ phiếu biến động lớn --> outliers
+- Bộ dữ liệu cho thấy có outliers nằm ở khoảng cuối năm 2008 gần đầu năm 2009. Điều này phù hợp với tình huống thực tế, bởi trong khoảng thời gian này xảy ra cuộc khủng hoảng kinh tế lớn (cuộc khủng hoảng kinh tế tại Hoa Kỳ năm 2008-2009) nên ảnh hưởng trực tiếp đến giá cổ phiếu dẫn đến giá cổ phiếu biến động lớn --> outliers  
 **- (CHÈN ẢNH)**
 - Do đó, các outliers này hình thành phù hợp với các sự kiện lịch sử nên ta không xử lí chúng.
 
@@ -66,38 +66,39 @@ Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến
   - adx_median = 21.24095 < 25 : Xu hướng không đủ mạnh
   - SMA50_slope: 0.00813 => Có xu hướng trung bình đang đi lên nhưng mà yếu
   - pct_close_above_SMA50 = 0.60127 => chưa đủ nhiều
-  - pct_close_below_SMA50 = 0.3792
+  - pct_close_below_SMA50 = 0.3792  
 **CHÈN ẢNH**
 
 3. Kiểm tra đặc trưng mean-reversion của cổ phiếu Coca Cola:
 - Về mặt tổng thể, cổ phiếu Coca Cola thể hiện yếu ở đặc trưng mean-reversion:
   - autocorr = -0.07382 < 0 : cho thấy returns có khuynh hướng đảo chiều nhẹ, không có sự nối tiếp rõ rệt.
   - adx_median = 21.24095 > 20 => ADX trung vị lớn 20 nhưng không quá nhiều, chứng tỏ xu hướng thị trường chưa quá mạnh, không bền vững.
-  - total_crosses_per_year: 20.31105 => nghĩa là trung bình khoảng 1 lần cắt mỗi ~12-13 ngày giao dịch, có hơi hướng biến động ngắn hạn.
-**CHÈN ẢNH**
+  - total_crosses_per_year: 20.31105 => nghĩa là trung bình khoảng 1 lần cắt mỗi ~12-13 ngày giao dịch, có hơi hướng biến động ngắn hạn.  
+**CHÈN ẢNH**  
 Nhận xét: nhóm em cảm thấy, theo hình ảnh trực quan về giá ta vẫn có thể quan sát được pattern trend following và pattern mean-reversion ở các khoảng thời gian nhỏ hơn và vẫn có thể dùng các pattern này để thiết kế trading strategy cho cổ phiếu của Coca Cola --> có thể sử dụng các đường SMA ngắn hơn ví dụ như một tháng hay một tuần (SMA 21) để xem pattern trend following hoặc mean-reversion.
-Hoặc ta có thể kết hợp cả 2 phần lại, vì nhóm em quan sát được bộ dữ liệu Coca Cola trong khoảng thời gian từ năm 2006 tới năm 2010 thì giao dộng quanh đường trung bình ở giá 15 --> có thể dùng mean-reversion ở đây. Sau đó thì stock có xu hướng tăng dần đều và tăng nhanh nên em sẽ dùng chiến lược giao dịch theo trend following.
-**CHÈN ẢNH STOCK**
+Hoặc ta có thể kết hợp cả 2 phần lại, vì nhóm em quan sát được bộ dữ liệu Coca Cola trong khoảng thời gian từ năm 2006 tới năm 2010 thì giao dộng quanh đường trung bình ở giá 15 --> có thể dùng mean-reversion ở đây. Sau đó thì stock có xu hướng tăng dần đều và tăng nhanh nên em sẽ dùng chiến lược giao dịch theo trend following.  
+**CHÈN ẢNH STOCK**  
 
 4. Kiểm tra đặc điểm của cổ phiếu Coca Cola theo return từng tháng và từng quý:
-trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 3, 9 và 11 là các tháng có trung bình return cao nhất và các khoảng thời gian từ tháng 3-5 và tháng 9-11 cũng thường xuyên có lợi nhuận dương và tăng trưởng mạnh ở các năm (Điều này có thể do các khoảng thời gian này rơi vào mùa lễ hội và các ngày nghỉ lễ lớn ở các quốc gia tiêu thụ lượng lớn Coca Cola ví dụ như các ngày lễ lớn ở Mexico vào 5/5 hay 1-2/11 hay Independence day vào 16/9,...). Do đó ta có thể xây dựng một chiến lược giao dịch theo mùa vào 2 khoảng thời gian từ tháng 3-5 và tháng 9-11 hằng năm.
+trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 3, 9 và 11 là các tháng có trung bình return cao nhất và các khoảng thời gian từ tháng 3-5 và tháng 9-11 cũng thường xuyên có lợi nhuận dương và tăng trưởng mạnh ở các năm (Điều này có thể do các khoảng thời gian này rơi vào mùa lễ hội và các ngày nghỉ lễ lớn ở các quốc gia tiêu thụ lượng lớn Coca Cola ví dụ như các ngày lễ lớn ở Mexico vào 5/5 hay 1-2/11 hay Independence day vào 16/9,...). Do đó ta có thể xây dựng một chiến lược giao dịch theo mùa vào 2 khoảng thời gian từ tháng 3-5 và tháng 9-11 hằng năm.  
 **CHÈN HÌNH ẢNH MỘT VÀI HÌNH**
 
 5. Kiểm tra các đặc điểm Pattern Up Down:
 - D → U = 53.23% : Sau khi giảm, giá có xác suất hồi phục không quá cao
 - U → U = 52.07% : Khi đã tăng, giá có xác suất tiếp tục tăng cũng chỉ hơi nhỉnh hơn 50% một tí khoảng 2.07% (không đáng kể)
 - Cả hai xác suất (D→U và U→U) đều chỉ hơi lệch khỏi 50%.
---> Điều này cho thấy hành vi giá không thiên mạnh về trend-following, và cũng không quá thiên về mean-reversion.
+--> Điều này cho thấy hành vi giá không thiên mạnh về trend-following, và cũng không quá thiên về mean-reversion.  
 **CHÈN ẢNH**
-#### Chiến lược giao dịch cổ phiếu Coca - Cola:
-**CHI TIẾT TRONG FILE trading_strategy_season_backtest.ipynb**
+### Chiến lược giao dịch cổ phiếu Coca - Cola:
+**CHI TIẾT TRONG FILE trading_strategy_season_backtest.ipynb**  
+
 Dựa trên phân tích trước về đặc điểm của cổ phiếu Coca-Cola, ta ghi nhận một số điểm quan trọng:
 - Không có xu hướng mạnh: ADX thấp và autocorrelation âm cho thấy giá không duy trì trend dài hạn; do đó các chiến lược trend-following kém hiệu quả.
 - Mean-reversion cũng không quá rõ ràng: không đủ mạnh để xây dựng chiến lược mean-reversion độc lập.
 - Mùa vụ rõ rệt: Hiệu ứng mùa vụ thể hiện khá ổn định — cổ phiếu thường mạnh vào quý Q3 và Q4, đặc biệt các tháng 3 / 9 / 11, trong khi tháng 1 thường yếu.
 Từ các quan sát này, ta quyết định ưu tiên một chiến lược mùa vụ ngắn hạn thay vì mean-reversion hoặc trend.
 
-##### Chiến lược giao dịch dựa trên Pattern seasonality: 
+#### Chiến lược giao dịch dựa trên Pattern seasonality: 
 Chiến lược này chỉ hoạt động trong 2 giai đoạn: Tháng 3 - Tháng 5 và Tháng 9 - Tháng 11
 1. Mua Ban Đầu (Entry)
 - Thời điểm: Ngày giao dịch đầu tiên của tháng (ví dụ: ngày 1/3, 1/9)
@@ -187,7 +188,7 @@ Nhóm em có 2 hướng cải tiến cho bài toán xây dựng chiến lược 
 - Thứ nhất, với chiến lược giao dịch theo mùa, thì ta có thể thay đổi bằng cách chỉ giao dịch tại giai đoạn 3-5 để tránh rủi ro và xây dựng thêm một chiến lược giao dịch mới, phù hợp hơn cho các tháng còn lại.
 - Thứ hai, theo quan sát được khi trực quan về giá cổ phiếu (OPEN) của Coca Cola thì nhóm em vẫn thấy được đặc điểm theo trend và mean-reversion của cổ phiếu này ở các khoảng thời gian nhỏ hơn. Do đó, nhóm em dự định sẽ:
   - Trực quan thêm ở các timeframe nhỏ hơn như một tuần (7 ngày) hay một tháng (21 ngày) để quan sát thêm.
-  - Hoặc có thể kết hợp cả 2 chiến lược giao dịch theo trend following và mean-reversion vào thành một chiến lược giao dịch mới cho cổ phiếu Coca Cola. Bởi nhóm em quan sát được trong khoảng năm 2006-2010 thì giá cổ phiếu của Coca Cola dao động quanh giá 15 (có thể vẽ được đường mean tại giá 15 --> áp dụng được mean-reversion) và từ năm 2010 đến năm 2015 thì giá cổ phiếu hầu như tăng trưởng và tăng trường với xu hướng nhanh do đó có thể thử áp dụng chiến lược giao dịch theo trend-following.
+  - Hoặc có thể kết hợp cả 2 chiến lược giao dịch theo trend following và mean-reversion vào thành một chiến lược giao dịch mới cho cổ phiếu Coca Cola. Bởi nhóm em quan sát được trong khoảng năm 2006-2010 thì giá cổ phiếu của Coca Cola dao động quanh giá 15 (có thể vẽ được đường mean tại giá 15 --> áp dụng được mean-reversion) và từ năm 2010 đến năm 2015 thì giá cổ phiếu hầu như tăng trưởng và tăng trường với xu hướng nhanh do đó có thể thử áp dụng chiến lược giao dịch theo trend-following.  
     **CHÈN HÌNH ẢNH**
 
 ## Kết quả
