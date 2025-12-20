@@ -83,7 +83,7 @@ Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến
 <img width="1734" height="493" alt="image" src="https://github.com/user-attachments/assets/1ec067dd-09bf-4dad-925e-76b6bc957e3c" />
 <img width="1731" height="618" alt="image" src="https://github.com/user-attachments/assets/8cace39a-f18b-4ad9-88f6-985c77836646" />
 
-4. Kiểm tra đặc điểm của cổ phiếu Coca Cola theo return từng tháng và từng quý:
+4. Kiểm tra đặc điểm của cổ phiếu Coca Cola theo return từng tháng và từng quý:  
 trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 3, 9 và 11 là các tháng có trung bình return cao nhất và các khoảng thời gian từ tháng 3-5 và tháng 9-11 cũng thường xuyên có lợi nhuận dương và tăng trưởng mạnh ở các năm (Điều này có thể do các khoảng thời gian này rơi vào mùa lễ hội và các ngày nghỉ lễ lớn ở các quốc gia tiêu thụ lượng lớn Coca Cola ví dụ như các ngày lễ lớn ở Mexico vào 5/5 hay 1-2/11 hay Independence day vào 16/9,...). Do đó ta có thể xây dựng một chiến lược giao dịch theo mùa vào 2 khoảng thời gian từ tháng 3-5 và tháng 9-11 hằng năm.  
 <img width="1500" height="628" alt="image" src="https://github.com/user-attachments/assets/a08bd1af-71b9-461f-805e-9e70809e6a9f" />
 <img width="1496" height="624" alt="image" src="https://github.com/user-attachments/assets/0ff92725-c833-4846-befe-299b1c72651c" />
