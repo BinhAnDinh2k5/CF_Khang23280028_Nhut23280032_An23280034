@@ -110,12 +110,13 @@ Mỗi ngày, hãy kiểm tra Giá Đóng Cửa (CLOSE) so với Giá Mua Ban Đ�
 3. Kết Thúc Giai Đoạn (Exit)
 - Thời điểm: Ngày giao dịch cuối cùng của tháng 5 hoặc tháng 11.
 - Hành động: Luôn BÁN tại Giá Mở Cửa (OPEN) của ngày cuối cùng đó để kết thúc vị thế và chờ đợi mùa giao dịch tiếp theo.
-(Ghi chú: Vì dữ liệu có một vài năm không đủ số tháng trong giai đoạn nên chiến lược sẽ không thực hiên mua/bán trong các giai đoạn đó (VD: tháng 10 năm 2015 và tháng 9 năm 2025))
+
 
 Hình ảnh giao dịch từng năm:
 <img width="834" height="364" alt="image" src="https://github.com/user-attachments/assets/9796a5c0-477d-4c56-b789-c29c5b0deddd" />
 <img width="839" height="361" alt="image" src="https://github.com/user-attachments/assets/c9ba7c93-3724-48cd-994b-857543b977ab" />
 <img width="1116" height="474" alt="image" src="https://github.com/user-attachments/assets/d57b85ab-b27c-42ef-be58-619ea8e30dd1" />
+(Ghi chú: Vì dữ liệu có một vài năm không đủ số tháng trong giai đoạn nên chiến lược sẽ không thực hiên mua/bán trong các giai đoạn đó (VD: tháng 10 năm 2015 và tháng 9 năm 2025))
 
 **Đánh giá chiến lược:**
 
