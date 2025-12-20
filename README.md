@@ -200,17 +200,3 @@ Nhóm em có 2 hướng cải tiến cho bài toán xây dựng chiến lược 
   - Trực quan thêm ở các timeframe nhỏ hơn như một tuần (7 ngày) hay một tháng (21 ngày) để quan sát thêm.
   - Hoặc có thể kết hợp cả 2 chiến lược giao dịch theo trend following và mean-reversion vào thành một chiến lược giao dịch mới cho cổ phiếu Coca Cola. Bởi nhóm em quan sát được trong khoảng năm 2006-2010 thì giá cổ phiếu của Coca Cola dao động quanh giá 15 (có thể vẽ được đường mean tại giá 15 --> áp dụng được mean-reversion) và từ năm 2010 đến năm 2015 thì giá cổ phiếu hầu như tăng trưởng và tăng trường với xu hướng nhanh do đó có thể thử áp dụng chiến lược giao dịch theo trend-following.  
     **CHÈN HÌNH ẢNH**
-
-## Kết quả
-
-Dự án cung cấp các biểu đồ và thống kê về:
-- Phân phối giá cổ phiếu
-- Phân tích xu hướng và ngoại lệ
-- Các chỉ báo kỹ thuật
-- Hiệu suất chiến lược giao dịch
-
-
-Nhận xét: nhóm em cảm thấy, theo hình ảnh trực quan về giá ta vẫn có thể quan sát được pattern trend following và pattern mean-reversion ở các khoảng thời gian nhỏ hơn và vẫn có thể dùng các pattern này để thiết kế trading strategy cho cổ phiếu của Coca Cola --> có thể sử dụng các đường SMA ngắn hơn ví dụ như một tháng hay một tuần (SMA 21) để xem pattern trend following hoặc mean-reversion.
-Hoặc ta có thể kết hợp cả 2 phần lại, vì nhóm em quan sát được bộ dữ liệu Coca Cola trong khoảng thời gian từ năm 2006 tới năm 2010 thì giao dộng quanh đường trung bình ở giá 15 --> có thể dùng mean-reversion ở đây. Sau đó thì stock có xu hướng tăng dần đều và tăng nhanh nên em sẽ dùng chiến lược giao dịch theo trend following.  
-**CHÈN ẢNH STOCK** 
-
