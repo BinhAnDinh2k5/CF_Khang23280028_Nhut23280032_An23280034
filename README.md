@@ -58,7 +58,8 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến năm 2014:
 1. Phát hiện các outliers:
 - Bộ dữ liệu cho thấy có outliers nằm ở khoảng cuối năm 2008 gần đầu năm 2009. Điều này phù hợp với tình huống thực tế, bởi trong khoảng thời gian này xảy ra cuộc khủng hoảng kinh tế lớn (cuộc khủng hoảng kinh tế tại Hoa Kỳ năm 2008-2009) nên ảnh hưởng trực tiếp đến giá cổ phiếu dẫn đến giá cổ phiếu biến động lớn --> outliers  
-**- (CHÈN ẢNH)**
+<img width="1492" height="620" alt="image" src="https://github.com/user-attachments/assets/d2e5d0e1-15e0-4262-a777-6300f02de156" />
+
 - Do đó, các outliers này hình thành phù hợp với các sự kiện lịch sử nên ta không xử lí chúng.
 
 2. Kiểm tra Pattern trend-following của cổ phiếu:
@@ -68,25 +69,35 @@ Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến
   - SMA50_slope: 0.00813 => Có xu hướng trung bình đang đi lên nhưng mà yếu
   - pct_close_above_SMA50 = 0.60127 => chưa đủ nhiều
   - pct_close_below_SMA50 = 0.3792  
-**CHÈN ẢNH**
+<img width="910" height="490" alt="image" src="https://github.com/user-attachments/assets/4e7a674f-2a00-4b9a-b48d-1ee1907883f6" />
+<img width="1730" height="491" alt="image" src="https://github.com/user-attachments/assets/9d1a6d73-df4f-4a13-ae7b-fc7c89e6ae72" />
+<img width="1254" height="597" alt="image" src="https://github.com/user-attachments/assets/2d77ca15-8bc0-4c09-abd2-99ff0e05b16c" />
+
 
 3. Kiểm tra đặc trưng mean-reversion của cổ phiếu Coca Cola:
 - Về mặt tổng thể, cổ phiếu Coca Cola thể hiện yếu ở đặc trưng mean-reversion:
   - autocorr = -0.07382 < 0 : cho thấy returns có khuynh hướng đảo chiều nhẹ, không có sự nối tiếp rõ rệt.
   - adx_median = 21.24095 > 20 => ADX trung vị lớn 20 nhưng không quá nhiều, chứng tỏ xu hướng thị trường chưa quá mạnh, không bền vững.
   - total_crosses_per_year: 20.31105 => nghĩa là trung bình khoảng 1 lần cắt mỗi ~12-13 ngày giao dịch, có hơi hướng biến động ngắn hạn.  
-**CHÈN ẢNH**   
+<img width="913" height="498" alt="image" src="https://github.com/user-attachments/assets/5911d76c-4388-4507-b685-00a31a0b4cd9" />
+<img width="1734" height="493" alt="image" src="https://github.com/user-attachments/assets/1ec067dd-09bf-4dad-925e-76b6bc957e3c" />
+<img width="1731" height="618" alt="image" src="https://github.com/user-attachments/assets/8cace39a-f18b-4ad9-88f6-985c77836646" />
 
 4. Kiểm tra đặc điểm của cổ phiếu Coca Cola theo return từng tháng và từng quý:
 trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 3, 9 và 11 là các tháng có trung bình return cao nhất và các khoảng thời gian từ tháng 3-5 và tháng 9-11 cũng thường xuyên có lợi nhuận dương và tăng trưởng mạnh ở các năm (Điều này có thể do các khoảng thời gian này rơi vào mùa lễ hội và các ngày nghỉ lễ lớn ở các quốc gia tiêu thụ lượng lớn Coca Cola ví dụ như các ngày lễ lớn ở Mexico vào 5/5 hay 1-2/11 hay Independence day vào 16/9,...). Do đó ta có thể xây dựng một chiến lược giao dịch theo mùa vào 2 khoảng thời gian từ tháng 3-5 và tháng 9-11 hằng năm.  
-**CHÈN HÌNH ẢNH MỘT VÀI HÌNH**
+<img width="1500" height="628" alt="image" src="https://github.com/user-attachments/assets/a08bd1af-71b9-461f-805e-9e70809e6a9f" />
+<img width="1496" height="624" alt="image" src="https://github.com/user-attachments/assets/0ff92725-c833-4846-befe-299b1c72651c" />
+<img width="1497" height="632" alt="image" src="https://github.com/user-attachments/assets/460cdd70-60b4-44ae-b2f1-024f43d34e9b" />
+<img width="1496" height="619" alt="image" src="https://github.com/user-attachments/assets/1f2a72e6-f041-411c-b234-5019dd1f7b0b" />
+<img width="1496" height="627" alt="image" src="https://github.com/user-attachments/assets/05d6892f-72bd-4712-ac6d-3b87b31af1eb" />
 
 5. Kiểm tra các đặc điểm Pattern Up Down:
 - D → U = 53.23% : Sau khi giảm, giá có xác suất hồi phục không quá cao
 - U → U = 52.07% : Khi đã tăng, giá có xác suất tiếp tục tăng cũng chỉ hơi nhỉnh hơn 50% một tí khoảng 2.07% (không đáng kể)
 - Cả hai xác suất (D→U và U→U) đều chỉ hơi lệch khỏi 50%.
 --> Điều này cho thấy hành vi giá không thiên mạnh về trend-following, và cũng không quá thiên về mean-reversion.  
-**CHÈN ẢNH**
+<img width="1735" height="386" alt="image" src="https://github.com/user-attachments/assets/838f0426-2ccb-44cb-b776-49ba4dc9592c" />
+
 ### Chiến lược giao dịch cổ phiếu Coca - Cola:
 Dựa trên phân tích trước về đặc điểm của cổ phiếu Coca-Cola, ta ghi nhận một số điểm quan trọng:
 - Không có xu hướng mạnh: ADX thấp và autocorrelation âm cho thấy giá không duy trì trend dài hạn; do đó các chiến lược trend-following kém hiệu quả.
