@@ -1,4 +1,4 @@
-# Chiến lược giao dịch cổ phiếu Coca-Cola
+# **Chiến lược giao dịch cổ phiếu Coca-Cola**
 
 Coca-Cola (mã cổ phiếu: KO) là một trong những thương hiệu nước giải khát lớn nhất và lâu đời nhất trên thế giới, với mạng lưới phân phối toàn cầu và danh mục sản phẩm đa dạng từ nước ngọt có ga, nước trái cây, trà, cà phê cho đến nước đóng chai. Nhờ vị thế dẫn đầu ngành cùng khả năng duy trì dòng tiền ổn định, cổ phiếu KO thường được xem là lựa chọn an toàn và hấp dẫn cho các nhà đầu tư dài hạn cũng như ngắn hạn.
 Dự án này được thực hiện nhằm xây dựng chiến lược giao dịch cho cổ phiếu Coca-Cola, dựa trên phân tích dữ liệu lịch sử giá và các mô hình kỹ thuật. Việc lựa chọn KO xuất phát từ:
@@ -6,7 +6,7 @@ Dự án này được thực hiện nhằm xây dựng chiến lược giao d�
 - Thanh khoản cao: KO là một trong những cổ phiếu blue-chip được giao dịch rộng rãi trên thị trường chứng khoán Mỹ.
 Dự án sẽ tập trung vào các khía cạnh phân tích dữ liệu như xu hướng giá, hiệu ứng lịch, ngoại lệ và mô hình giao dịch theo mùa, từ đó đề xuất chiến lược tối ưu cho việc đầu tư và giao dịch cổ phiếu KO.
 
-## Mô tả
+## **Mô tả**
 
 Dự án này thực hiện phân tích dữ liệu khám phá trên dữ liệu giá cổ phiếu của Coca-Cola, từ đó đưa ra chiến lược giao dịch phù hợp. Các nội dung bao gồm:
 - Crawl dữ liệu cổ phiếu 
@@ -17,12 +17,12 @@ Dự án này thực hiện phân tích dữ liệu khám phá trên dữ liệu
 - Phân tích mẫu lên xuống (Up-Down Patterns)
 - Chiến lược giao dịch theo mùa (Seasonal Trading Strategy)
 
-## Yêu cầu hệ thống
+## **Yêu cầu hệ thống**
 
 - Python 3.x
 - Các thư viện: pandas, matplotlib, numpy, talib, scipy, statsmodels
 
-## Cài đặt
+## **Cài đặt**
 
 Cài đặt các thư viện cần thiết bằng pip:
 
@@ -30,7 +30,7 @@ Cài đặt các thư viện cần thiết bằng pip:
 pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 ```
 
-## Cấu trúc dự án
+## **Cấu trúc dự án**
 
 - `trading_strategy_season_backtest.ipynb`: Notebook chính chứa trading strategy theo mùa cố định và backtest.
 - `EDA.ipynb`: Notebook chứa các phân tích EDA của data Coca-Cola.
@@ -45,15 +45,15 @@ pip install pandas matplotlib numpy talib scipy statsmodels yfinance
 - `Data/`: Thư mục chứa dữ liệu đầu vào (KO.csv).
 
 
-## Cách sử dụng
+## **Cách sử dụng**
 1. Dùng notebook `yfinance_crawl_data.ipynb` để crawl dữ liệu cổ phiếu Coca-cola về thư mục 'Data'
 2. Đảm bảo file dữ liệu `KO.csv` được đặt trong thư mục `Data` (đường dẫn tương đối từ dự án).
 3. Mở file notebook EDA.ipynb để xem phân tích EDA về dữ liệu Coca-cola.
 4. Khi muốn chạy để xem backtest và đánh giá kết quả của chiến lược giao dịch theo mùa, mở và chạy notebook `trading_strategy_season_backtest.ipynb` trong Jupyter Notebook hoặc JupyterLab.
 5. Notebook sẽ tải dữ liệu, thực hiện phân tích và hiển thị kết quả trực quan.
 
-## Một số điểm chính trong phần thực hành:
-### Về phân tích EDA bộ dữ liệu Coca - Cola:
+## **Một số điểm chính trong phần thực hành:**
+### **Về phân tích EDA bộ dữ liệu Coca - Cola:**
 **CHI TIẾT TRONG FILE EDA.ipynb**  
 Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến năm 2014:
 1. Phát hiện các outliers:
@@ -98,14 +98,14 @@ trung bình trong khoảng 10 năm (2005 đến 2014) thì cho ta thấy tháng 
 --> Điều này cho thấy hành vi giá không thiên mạnh về trend-following, và cũng không quá thiên về mean-reversion.  
 <img width="1735" height="386" alt="image" src="https://github.com/user-attachments/assets/838f0426-2ccb-44cb-b776-49ba4dc9592c" />
 
-### Chiến lược giao dịch cổ phiếu Coca - Cola:
+### **Chiến lược giao dịch cổ phiếu Coca - Cola:**
 Dựa trên phân tích trước về đặc điểm của cổ phiếu Coca-Cola, ta ghi nhận một số điểm quan trọng:
 - Không có xu hướng mạnh: ADX thấp và autocorrelation âm cho thấy giá không duy trì trend dài hạn; do đó các chiến lược trend-following kém hiệu quả.
 - Mean-reversion cũng không quá rõ ràng: không đủ mạnh để xây dựng chiến lược mean-reversion độc lập.
 - Mùa vụ rõ rệt: Hiệu ứng mùa vụ thể hiện khá ổn định — cổ phiếu thường mạnh vào quý Q3 và Q4, đặc biệt các tháng 3 / 9 / 11, trong khi tháng 1 thường yếu.
 Từ các quan sát này, ta quyết định ưu tiên một chiến lược mùa vụ ngắn hạn thay vì mean-reversion hoặc trend.
 
-#### Chiến lược giao dịch dựa trên Pattern seasonality:
+#### **Chiến lược giao dịch dựa trên Pattern seasonality:**
 **CHI TIẾT TRONG FILE trading_strategy_season_backtest.ipynb**  
 
 Chiến lược này chỉ hoạt động trong 2 giai đoạn: Tháng 3 - Tháng 5 và Tháng 9 - Tháng 11
@@ -129,7 +129,7 @@ Hình ảnh giao dịch từng năm:
 <img width="1116" height="474" alt="image" src="https://github.com/user-attachments/assets/d57b85ab-b27c-42ef-be58-619ea8e30dd1" />
 (Ghi chú: Vì dữ liệu có một vài năm không đủ số tháng trong giai đoạn nên chiến lược sẽ không thực hiên mua/bán trong các giai đoạn đó (VD: tháng 10 năm 2015 và tháng 9 năm 2025))
 
-**Đánh giá chiến lược:**
+## **Phân tích kết quả và đánh giá chiến lược:**
 
 | Metric              | Value   |
 |---------------------|---------|
@@ -193,7 +193,7 @@ Hình ảnh giao dịch từng năm:
 
 Theo tóm tắt return_pct theo mùa (ở 2 giai đoạn tháng 3-5 và tháng 9-11) ở các năm, thì tháng 3-5 luôn đóng góp phần lớn trong việc giao dịch đem lại lợi nhuận và tháng 9-11 có nhiều năm đem lại lợi nhuận âm. --> Ta có hướng phát triển tiếp theo, có thể chỉ sử dụng giao dịch theo mùa vụ ở tháng 3-5 để tối ưu hơn và tránh rủi ro hơn cho giao dịch ở các năm tiếp theo và với các tháng khác ta có thể xây dựng thêm một chiến lược giao dịch mới, phù hợp hơn.
 
-#### Cải tiến và đánh giá:
+## **Cải tiến và đánh giá**
 Nhóm em có 2 hướng cải tiến cho bài toán xây dựng chiến lược giao dịch cho cổ phiếu Coca Cola như sau:
 - Thứ nhất, với chiến lược giao dịch theo mùa, thì ta có thể thay đổi bằng cách chỉ giao dịch tại giai đoạn 3-5 để tránh rủi ro và xây dựng thêm một chiến lược giao dịch mới, phù hợp hơn cho các tháng còn lại.
 - Thứ hai, theo quan sát được khi trực quan về giá cổ phiếu (OPEN) của Coca Cola thì nhóm em vẫn thấy được đặc điểm theo trend và mean-reversion của cổ phiếu này ở các khoảng thời gian nhỏ hơn. Do đó, nhóm em dự định sẽ:
