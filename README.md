@@ -193,6 +193,6 @@ Theo tóm tắt return_pct theo mùa (ở 2 giai đoạn tháng 3-5 và tháng 9
 
 ## **Cải tiến và đánh giá**
 Nhóm em có 2 hướng cải tiến cho bài toán xây dựng chiến lược giao dịch cho cổ phiếu Coca Cola như sau:
-- Thứ nhất, với chiến lược giao dịch theo mùa, thì ta có thể thay đổi bằng cách chỉ giao dịch tại giai đoạn 3-5 để tránh rủi ro và xây dựng thêm một chiến lược giao dịch mới, phù hợp hơn cho các tháng còn lại.
-- Thứ hai, theo quan sát được khi trực quan về giá cổ phiếu (OPEN) của Coca Cola thì nhóm em vẫn thấy được đặc điểm theo trend và mean-reversion của cổ phiếu này ở các khoảng thời gian nhỏ hơn. Do đó, nhóm em dự định sẽ:
-  - Trực quan thêm ở các timeframe nhỏ hơn như một tuần (7 ngày) hay một tháng (21 ngày) để quan sát thêm.
+- Có thể xây dựng Regime Filter (sideway / trend / mean-reversion) để quyết định khi nào chiến lược seasonality được phép kích hoạt.
+- So sánh hiệu suất của chiến lược khi có Regime Filter sẽ như thế nào so với phiên bản hiện tại
+
