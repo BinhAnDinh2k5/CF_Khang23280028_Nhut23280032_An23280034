@@ -63,11 +63,11 @@ Bộ dữ liệu Coca Cola dùng cho phân tích EDA lấy từ năm 2005 đến
 - Do đó, các outliers này hình thành phù hợp với các sự kiện lịch sử nên ta không xử lí chúng.
 
 2. Phân chia Regime thị trường (kiểm tra Trend-Following, Mean-reversion và Side-way):  
-Thị trường tài chính không duy trì một trạng thái cố định theo thời gian mà liên tục luân chuyển giữa
+
+- Thị trường tài chính không duy trì một trạng thái cố định theo thời gian mà liên tục luân chuyển giữa
 các regime khác nhau như **trend-following**, **mean-reversion** và **sideways**. Vì vậy, hiệu quả
 của chiến lược giao dịch phụ thuộc mạnh vào regime thị trường đang diễn ra.
-
-Trong phần này, dữ liệu được chia thành các **cửa sổ thời gian 6 tháng không chồng lấn**,
+- Trong phần này, dữ liệu được chia thành các **cửa sổ thời gian 6 tháng không chồng lấn**,
 mỗi cửa sổ đại diện cho một điều kiện thị trường độc lập. Cách tiếp cận này giúp phản ánh đúng
 tính phi tĩnh của thị trường.
 
